@@ -1,0 +1,17 @@
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/stored/Customer.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/interfaces/TariffDAO.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/logic/Database.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/interfaces/ServiceDAO.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/stored/Event.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/interfaces/CustomerDAO.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/stored/Tariff.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/implementation/ServiceDAOImpl.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/implementation/ContractDAOImpl.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/stored/Contract.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/logic/Factory.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/implementation/CustomerDAOImpl.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/implementation/TariffDAOImpl.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/interfaces/EventDAO.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/hibernate/stored/Services.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/implementation/EventDAOImpl.java
+/home/narek/prac/MobileOperator/src/main/java/org/badcoding/dao/interfaces/ContractDAO.java

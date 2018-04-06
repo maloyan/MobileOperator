@@ -1,0 +1,17 @@
+org/badcoding/hibernate/stored/Contract.class
+org/badcoding/dao/interfaces/ServiceDAO.class
+org/badcoding/hibernate/stored/Event.class
+org/badcoding/hibernate/stored/Services.class
+org/badcoding/dao/interfaces/TariffDAO.class
+org/badcoding/dao/implementation/ServiceDAOImpl.class
+org/badcoding/dao/interfaces/ContractDAO.class
+org/badcoding/dao/implementation/EventDAOImpl.class
+org/badcoding/dao/interfaces/CustomerDAO.class
+org/badcoding/hibernate/logic/Database.class
+org/badcoding/dao/implementation/ContractDAOImpl.class
+org/badcoding/hibernate/stored/Customer.class
+org/badcoding/dao/implementation/TariffDAOImpl.class
+org/badcoding/hibernate/logic/Factory.class
+org/badcoding/dao/implementation/CustomerDAOImpl.class
+org/badcoding/dao/interfaces/EventDAO.class
+org/badcoding/hibernate/stored/Tariff.class

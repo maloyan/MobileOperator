@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="DAO">
+    <test name="Contract">
+        <classes>
+            <class name="org.badcoding.test.ContractDAOTest" />
+        </classes>
+    </test>
+    <test name="Customer">
+        <classes>
+            <class name="org.badcoding.test.CustomerDAOTest" />
+        </classes>
+    </test>
+    <test name="Event">
+        <classes>
+            <class name="org.badcoding.test.EventDAOTest" />
+        </classes>
+    </test>
+    <test name="Services">
+        <classes>
+            <class name="org.badcoding.test.ServiceDAOTest" />
+        </classes>
+    </test>
+    <test name="Tariff">
+        <classes>
+            <class name="org.badcoding.test.TariffDAOTest" />
+        </classes>
+    </test>
+</suite>

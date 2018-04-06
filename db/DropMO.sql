@@ -1,0 +1,5 @@
+DROP TABLE Event;
+DROP TABLE Contract;
+DROP TABLE Services;
+DROP TABLE Customer;
+DROP TABLE Tariff;
