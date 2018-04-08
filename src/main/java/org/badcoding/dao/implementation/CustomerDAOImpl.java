@@ -1,6 +1,7 @@
 package org.badcoding.dao.implementation;
 
 import org.badcoding.dao.interfaces.CustomerDAO;
+import org.badcoding.hibernate.stored.Contract;
 import org.badcoding.hibernate.stored.Customer;
 import org.badcoding.hibernate.logic.Database;
 
@@ -72,8 +73,23 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     public List<Customer> listCustomers() {
-
-        return null;
+        Session session = null;
+        List<Customer> customersList = new ArrayList<Customer>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                            "FROM Customer f ";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            customersList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return customersList;
     }
 
 }

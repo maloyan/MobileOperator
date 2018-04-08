@@ -72,8 +72,23 @@ public class EventDAOImpl implements EventDAO {
     }
 
     public List<Event> listEvents() {
-
-        return null;
+        Session session = null;
+        List<Event> eventList = new ArrayList<Event>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                            "FROM Event f ";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            eventList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return eventList;
     }
 
 }

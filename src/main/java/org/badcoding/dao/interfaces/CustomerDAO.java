@@ -5,11 +5,11 @@ import org.badcoding.hibernate.stored.Customer;
 import java.util.List;
 
 public interface CustomerDAO {
-    void addCustomer(Customer Customer);
+    void addCustomer(Customer customer);
 
-    void updateCustomer(Customer Customer);
+    void updateCustomer(Customer customer);
 
-    void removeCustomer(Customer Customer);
+    void removeCustomer(Customer customer);
 
     Customer getCustomerById(int id);
 

@@ -72,8 +72,23 @@ public class ServiceDAOImpl implements ServiceDAO {
     }
 
     public List<Services> listServices() {
-
-        return null;
+        Session session = null;
+        List<Services> serviceList = new ArrayList<Services>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                            "FROM Services f ";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            serviceList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return serviceList;
     }
 
 }

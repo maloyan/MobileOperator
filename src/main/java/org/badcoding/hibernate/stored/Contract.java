@@ -1,28 +1,40 @@
 package org.badcoding.hibernate.stored;
 
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Contract")
 public class Contract {
+
     private int contractId;
+    private Customer customer;
+    private Tariff tariff;
     private String phoneNumber;
     private int balance;
     private String registerDate;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Contract_ID", nullable = false)
     public int getContractId() {
         return contractId;
     }
+    public void setContractId(int contractId) { this.contractId = contractId; }
 
-    public void setContractId(int contractId) {
-        this.contractId = contractId;
-    }
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "Customer_ID")
+    public Customer getCustomer() { return customer; }
 
-    
+    public void setCustomer(Customer customer) { this.customer = customer; }
+
+    @ManyToOne
+    @JoinColumn(name = "Tariff_ID")
+    public Tariff getTariff() { return tariff; }
+
+    public void setTariff(Tariff tariff) { this.tariff = tariff; }
+
     @Basic
     @Column(name = "phone_number", nullable = true, length = 45)
     public String getPhoneNumber() {
@@ -33,7 +45,6 @@ public class Contract {
         this.phoneNumber = phoneNumber;
     }
 
-    
     @Basic
     @Column(name = "balance", nullable = false)
     public int getBalance() {
@@ -44,7 +55,7 @@ public class Contract {
         this.balance = balance;
     }
 
-    
+
     @Basic
     @Column(name = "register_date", nullable = true, length = 45)
     public String getRegisterDate() {

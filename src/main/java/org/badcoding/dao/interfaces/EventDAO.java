@@ -5,11 +5,11 @@ import org.badcoding.hibernate.stored.Event;
 import java.util.List;
 
 public interface EventDAO {
-    void addEvent(Event Event);
+    void addEvent(Event event);
 
-    void updateEvent(Event Event);
+    void updateEvent(Event event);
 
-    void removeEvent(Event Event);
+    void removeEvent(Event event);
 
     Event getEventById(int id);
 

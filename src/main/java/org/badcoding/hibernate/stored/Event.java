@@ -11,6 +11,8 @@ public class Event {
     private Timestamp startDate;
     private Timestamp endDate;
     private int amount;
+    private Contract contract;
+    private Services service;
 
     @Id
     @Column(name = "Event_ID", nullable = false)
@@ -22,7 +24,6 @@ public class Event {
         this.eventId = eventId;
     }
 
-    
     @Basic
     @Column(name = "start_date", nullable = false)
     public Timestamp getStartDate() {
@@ -33,7 +34,6 @@ public class Event {
         this.startDate = startDate;
     }
 
-    
     @Basic
     @Column(name = "end_date", nullable = true)
     public Timestamp getEndDate() {
@@ -44,7 +44,6 @@ public class Event {
         this.endDate = endDate;
     }
 
-    
     @Basic
     @Column(name = "amount", nullable = false)
     public int getAmount() {
@@ -54,6 +53,20 @@ public class Event {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "Contract_ID", referencedColumnName = "Contract_ID", nullable = false)
+    public Contract getContractId() {
+        return contract;
+    }
+
+    public void setContractId(Contract contractByContractId) { this.contract = contractByContractId; }
+
+    @ManyToOne
+    @JoinColumn(name = "Service_ID", referencedColumnName = "Service_ID", nullable = false)
+    public Services getService() { return service; }
+
+    public void setService(Services service) { this.service = service; }
 
     @Override
     public boolean equals(Object o) {
@@ -71,4 +84,5 @@ public class Event {
 
         return Objects.hash(eventId, startDate, endDate, amount);
     }
+
 }

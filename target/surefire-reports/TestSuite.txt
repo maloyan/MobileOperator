@@ -1,0 +1,61 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.749 sec <<< FAILURE! - in TestSuite
+testAddContract(org.badcoding.dao.interfaces.ContractDAOTest)  Time elapsed: 0.397 sec  <<< FAILURE!
+java.lang.ExceptionInInitializerError: null
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:106)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.buildJdbcConnectionAccess(JdbcServicesImpl.java:260)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:94)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.badcoding.hibernate.logic.Database.<clinit>(Database.java:14)
+	at org.badcoding.dao.implementation.ContractDAOImpl.addContract(ContractDAOImpl.java:21)
+	at org.badcoding.dao.interfaces.ContractDAOTest.testAddContract(ContractDAOTest.java:19)
+
+testGetContractById(org.badcoding.dao.interfaces.ContractDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:64)
+	at org.badcoding.dao.interfaces.ContractDAOTest.testGetContractById(ContractDAOTest.java:50)
+
+testListContracts(org.badcoding.dao.interfaces.ContractDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.listContracts(ContractDAOImpl.java:81)
+	at org.badcoding.dao.interfaces.ContractDAOTest.testListContracts(ContractDAOTest.java:56)
+
+testRemoveContract(org.badcoding.dao.interfaces.ContractDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:64)
+	at org.badcoding.dao.interfaces.ContractDAOTest.testRemoveContract(ContractDAOTest.java:42)
+
+testUpdateContract(org.badcoding.dao.interfaces.ContractDAOTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:64)
+	at org.badcoding.dao.interfaces.ContractDAOTest.testUpdateContract(ContractDAOTest.java:35)
+

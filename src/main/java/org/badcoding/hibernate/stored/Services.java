@@ -10,6 +10,10 @@ public class Services {
     private String serviceName;
     private String description;
 
+    public void setServiceId(Integer serviceId) {
+        this.serviceId = serviceId;
+    }
+
     @Id
     @Column(name = "Service_ID", nullable = false)
     public int getServiceId() {

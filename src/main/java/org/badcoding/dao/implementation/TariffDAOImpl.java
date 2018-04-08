@@ -72,8 +72,23 @@ public class TariffDAOImpl implements TariffDAO {
     }
 
     public List<Tariff> listTariffs() {
-
-        return null;
+        Session session = null;
+        List<Tariff> tariffsList = new ArrayList<Tariff>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                            "FROM Tariff f ";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            tariffsList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return tariffsList;
     }
 
 }

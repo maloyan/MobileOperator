@@ -1,40 +1,42 @@
-package org.badcoding.dao.interfaces;
-
-import static org.testng.Assert.*;
+package org.badcoding.dao.implementation;
 
 import org.badcoding.hibernate.logic.Factory;
-import org.badcoding.hibernate.stored.*;
-import org.testng.Assert;
+import org.badcoding.hibernate.stored.Contract;
+import org.badcoding.hibernate.stored.Customer;
+import org.badcoding.hibernate.stored.Tariff;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class ContractDAOTest extends Assert{
+import static org.testng.Assert.*;
+
+public class ContractDAOImplTest {
 
     @Test
     public void testAddContract() {
+        Customer customer = Factory.GetInstance().getCustomerDAO().getCustomerById(2);
+        Tariff tariff = Factory.GetInstance().getTariffDAO().getTariffById(1);
         Contract contract = new Contract();
+        contract.setContractId(10);
+        contract.setCustomer(customer);
+        contract.setTariff(tariff);
         contract.setBalance(100);
         contract.setPhoneNumber("123123123");
         contract.setRegisterDate("2017-01-01");
         Factory.GetInstance().getContractDAO().addContract(contract);
 
-        Contract contract1 = Factory.GetInstance().getContractDAO().getContractById(1);
-        assertNotNull(contract1);
-        /*
-        contract.setContractId(10);
+        Customer customer1 = customer;
 
-        Contract newContract = Factory.GetInstance().getContractDAO().getContractById(10);
+        assertNotNull(customer1);
+        assertEquals(customer, customer1);
 
-        assertNotNull(newContract);
-        assertEquals(newContract.getContractId(), contract.getContractId());
-        */
     }
 
     @Test
     public void testUpdateContract() {
-        Contract contract = Factory.GetInstance().getContractDAO().getContractById(1);
+        Contract contract = Factory.GetInstance().getContractDAO().getContractById(3);
         contract.setPhoneNumber("123123");
+        Factory.GetInstance().getContractDAO().updateContract(contract);
         assertEquals(contract.getPhoneNumber(), "123123");
     }
 
@@ -55,6 +57,11 @@ public class ContractDAOTest extends Assert{
     @Test
     public void testListContracts() {
         List<Contract> contractList = Factory.GetInstance().getContractDAO().listContracts();
-        assertEquals(contractList.size(), 4);
+        Contract contract = Factory.GetInstance().getContractDAO().getContractById(2);
+        contract.setContractId(11);
+        contract.setPhoneNumber("123123");
+        Factory.GetInstance().getContractDAO().addContract(contract);
+        List<Contract> newContractList = Factory.GetInstance().getContractDAO().listContracts();
+        assertEquals(contractList.size() + 1, newContractList.size());
     }
 }
