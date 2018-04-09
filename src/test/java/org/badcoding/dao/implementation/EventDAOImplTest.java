@@ -4,6 +4,9 @@ import org.badcoding.hibernate.logic.Factory;
 import org.badcoding.hibernate.stored.Event;
 import org.testng.annotations.Test;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.testng.Assert.*;
@@ -41,5 +44,13 @@ public class EventDAOImplTest {
         Factory.GetInstance().getEventDAO().addEvent(event);
         List<Event> newEventList = Factory.GetInstance().getEventDAO().listEvents();
         assertEquals(eventList.size() + 1, newEventList.size());
+    }
+
+    @Test
+    public void testListEventByDate() {
+        Date start = new Date(2000 - 1900, 1, 1);
+        Date end = new Date(2018 - 1900, 1, 1);
+        List<Event> eventList = Factory.GetInstance().getEventDAO().listEventByDate(start, end);
+        assertEquals(eventList.size(), 1);
     }
 }

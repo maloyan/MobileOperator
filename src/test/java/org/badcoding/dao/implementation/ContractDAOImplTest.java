@@ -22,7 +22,6 @@ public class ContractDAOImplTest {
         contract.setTariff(tariff);
         contract.setBalance(100);
         contract.setPhoneNumber("123123123");
-        contract.setRegisterDate("2017-01-01");
         Factory.GetInstance().getContractDAO().addContract(contract);
 
         Customer customer1 = customer;
@@ -63,5 +62,12 @@ public class ContractDAOImplTest {
         Factory.GetInstance().getContractDAO().addContract(contract);
         List<Contract> newContractList = Factory.GetInstance().getContractDAO().listContracts();
         assertEquals(contractList.size() + 1, newContractList.size());
+    }
+
+    @Test
+    public void testListContractsOfCustomer() {
+        Customer customer = Factory.GetInstance().getCustomerDAO().getCustomerById(1);
+        List<Contract> contractList = Factory.GetInstance().getContractDAO().listContractsOfCustomer(customer);
+        assertEquals(contractList.size(), 1);
     }
 }

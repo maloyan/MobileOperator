@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
+import org.badcoding.hibernate.stored.Customer;
 import org.springframework.stereotype.Service;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -81,6 +82,30 @@ public class ContractDAOImpl implements ContractDAO {
             session = Database.getFactory().openSession();
             session.beginTransaction();
             Query query = session.createQuery(queryText);
+            contractList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return contractList;
+    }
+
+    public List<Contract> listContractsOfCustomer(Customer customer) {
+        Session session = null;
+        List<Contract> contractList = new ArrayList<Contract>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                    "FROM Contract f " +
+                    "WHERE f.customer = :ctmr";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            if (customer != null) {
+                query.setInteger("ctmr", customer.getCustomerId());
+            }
             contractList = query.list();
             session.getTransaction().commit();
         } finally {

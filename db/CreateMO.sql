@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `Contract` (
   `Tariff_ID` INT NOT NULL,
   `phone_number` VARCHAR(45) NULL,
   `balance` INT NOT NULL,
-  `register_date` VARCHAR(45) NULL,
+  `register_date` DATETIME NULL,
   PRIMARY KEY (`Contract_ID`),
   CONSTRAINT `fk_Contract_Customer`
     FOREIGN KEY (`Customer_ID`)

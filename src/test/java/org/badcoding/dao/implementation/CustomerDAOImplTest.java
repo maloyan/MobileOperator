@@ -35,4 +35,6 @@ public class CustomerDAOImplTest {
         assertEquals(customer.getCustomerId(), 4);
     }
 
+
+
 }

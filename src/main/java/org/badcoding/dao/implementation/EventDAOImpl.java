@@ -4,6 +4,7 @@ import org.badcoding.dao.interfaces.EventDAO;
 import org.badcoding.hibernate.stored.Event;
 import org.badcoding.hibernate.logic.Database;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -71,13 +72,39 @@ public class EventDAOImpl implements EventDAO {
         return event;
     }
 
+    public List<Event> listEventByDate(Date start, Date end) {
+        Session session = null;
+        List<Event> eventList = new ArrayList<Event>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                    "FROM Event f " +
+                    "WHERE f.startDate > :start AND f.startDate < :end";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            if (start != null)
+                query.setDate("start", start);
+            if (end != null)
+                query.setDate("end", end);
+            eventList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return eventList;
+
+    }
+
     public List<Event> listEvents() {
         Session session = null;
         List<Event> eventList = new ArrayList<Event>();
         try {
             String queryText =
                     "SELECT f " +
-                            "FROM Event f ";
+                     "FROM Event f ";
             session = Database.getFactory().openSession();
             session.beginTransaction();
             Query query = session.createQuery(queryText);

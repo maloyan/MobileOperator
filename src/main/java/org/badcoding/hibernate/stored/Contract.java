@@ -3,6 +3,7 @@ package org.badcoding.hibernate.stored;
 import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -14,13 +15,14 @@ public class Contract {
     private Tariff tariff;
     private String phoneNumber;
     private int balance;
-    private String registerDate;
+    private Date registerDate;
 
     @Id
     @Column(name = "Contract_ID", nullable = false)
     public int getContractId() {
         return contractId;
     }
+
     public void setContractId(int contractId) { this.contractId = contractId; }
 
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
@@ -58,11 +60,11 @@ public class Contract {
 
     @Basic
     @Column(name = "register_date", nullable = true, length = 45)
-    public String getRegisterDate() {
+    public Date getRegisterDate() {
         return registerDate;
     }
 
-    public void setRegisterDate(String registerDate) {
+    public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
     }
 
