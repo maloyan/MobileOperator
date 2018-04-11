@@ -21,4 +21,13 @@ public class TariffDAOImplTest {
         List<Tariff> newTariffList = Factory.GetInstance().getTariffDAO().listTariffs();
         assertEquals(tariffList.size() + 1, newTariffList.size());
     }
+
+    @Test
+    public void removeTariff() {
+        Tariff tariff = new Tariff();
+        tariff.setTariffId(10);
+        tariff.setName("slkjfklsdfj");
+        Factory.GetInstance().getTariffDAO().addTariff(tariff);
+        Factory.GetInstance().getTariffDAO().removeTariff(tariff);
+    }
 }

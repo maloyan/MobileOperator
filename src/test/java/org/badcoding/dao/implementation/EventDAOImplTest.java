@@ -1,6 +1,7 @@
 package org.badcoding.dao.implementation;
 
 import org.badcoding.hibernate.logic.Factory;
+import org.badcoding.hibernate.stored.Contract;
 import org.badcoding.hibernate.stored.Event;
 import org.testng.annotations.Test;
 
@@ -29,7 +30,16 @@ public class EventDAOImplTest {
         Factory.GetInstance().getEventDAO().updateEvent(event);
         assertEquals(event.getAmount(), 10);
     }
-
+/*
+    @Test
+    public void testRemoveEvent() {
+        Event event = Factory.GetInstance().getEventDAO().getEventById(1);
+        Contract contract = Factory.GetInstance().getContractDAO().getContractById(4);
+        Factory.GetInstance().getContractDAO().removeContract(contract);
+        Factory.GetInstance().getEventDAO().removeEvent(event);
+        assertNull(event);
+    }
+*/
     @Test
     public void testGetEventById() {
         Event event = Factory.GetInstance().getEventDAO().getEventById(1);
@@ -51,6 +61,6 @@ public class EventDAOImplTest {
         Date start = new Date(2000 - 1900, 1, 1);
         Date end = new Date(2018 - 1900, 1, 1);
         List<Event> eventList = Factory.GetInstance().getEventDAO().listEventByDate(start, end);
-        assertEquals(eventList.size(), 1);
+        assertEquals(eventList.size(), 2);
     }
 }
