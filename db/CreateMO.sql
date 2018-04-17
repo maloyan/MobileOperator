@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `Customer` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `company` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NOT NULL,
   `address` VARCHAR(45) NOT NULL,
   `commersial_or_personal` VARCHAR(45) NOT NULL,
   `passport` VARCHAR(45) NOT NULL,
@@ -87,3 +87,19 @@ CREATE TABLE IF NOT EXISTS `Event` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `User`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `User` (
+  `User_ID` INT NOT NULL AUTO_INCREMENT,
+  `password` VARCHAR(45) NOT NULL,
+  `role` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`User_ID`),
+  CONSTRAINT `fk_User_Customer`
+    FOREIGN KEY (`User_ID`)
+    REFERENCES `Customer` (`Customer_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+

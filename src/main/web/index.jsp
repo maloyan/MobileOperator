@@ -8,9 +8,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Mobile operator</title>
+    <link href="/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-  $END$
+      <%@include file="navbar.jsp" %>
+      <c:if test="${!empty errors}">
+          <p>
+          <div class="col-xs-10 col-xs-offset-1">
+              <c:forEach items="${errors}" var="error">
+                  <div class="alert alert-danger fade in">
+                      <button class="close" aria-hidden="true" data-dismiss="alert" type="button">
+                          ×
+                      </button>
+                      <strong><spring:message code="error.00" /></strong>
+                      <spring:message code="error.${error}" />
+                  </div>
+              </c:forEach>
+          </div>
+          </p>
+      </c:if>
   </body>
 </html>

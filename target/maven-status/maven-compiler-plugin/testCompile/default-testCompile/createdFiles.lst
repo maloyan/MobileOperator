@@ -1,2 +1,5 @@
-org/badcoding/dao/interfaces/ContractDAOTest.class
-org/badcoding/dao/interfaces/CustomerDAOTest.class
+org/badcoding/dao/implementation/EventDAOImplTest.class
+org/badcoding/dao/implementation/CustomerDAOImplTest.class
+org/badcoding/dao/implementation/ServiceDAOImplTest.class
+org/badcoding/dao/implementation/ContractDAOImplTest.class
+org/badcoding/dao/implementation/TariffDAOImplTest.class

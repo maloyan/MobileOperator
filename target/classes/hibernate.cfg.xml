@@ -10,8 +10,6 @@
 
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/MobileOperator</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">ik5holo+</property>
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
 
@@ -31,6 +29,7 @@
         <mapping class="org.badcoding.hibernate.stored.Event"/>
         <mapping class="org.badcoding.hibernate.stored.Services"/>
         <mapping class="org.badcoding.hibernate.stored.Tariff"/>
+        <mapping class="org.badcoding.hibernate.stored.User"/>
 
 
     </session-factory>

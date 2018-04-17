@@ -1,2 +1,5 @@
-/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/interfaces/ContractDAOTest.java
-/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/interfaces/CustomerDAOTest.java
+/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/implementation/ContractDAOImplTest.java
+/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/implementation/TariffDAOImplTest.java
+/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/implementation/EventDAOImplTest.java
+/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/implementation/ServiceDAOImplTest.java
+/home/narek/prac/MobileOperator/src/test/java/org/badcoding/dao/implementation/CustomerDAOImplTest.java
