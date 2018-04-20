@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="org.badcoding.dao.implementation.CustomerDAOImplTest">
+        <methods>
+          <include name="testGetCustomerById"/>
+          <include name="testAddCustomer"/>
+          <include name="testUpdateCustomer"/>
+        </methods>
+      </class> <!-- org.badcoding.dao.implementation.CustomerDAOImplTest -->
+      <class name="org.badcoding.dao.implementation.ContractDAOImplTest">
+        <methods>
+          <include name="testAddContract"/>
+          <include name="testUpdateContract"/>
+          <include name="testListContractsOfCustomer"/>
+          <include name="testListContracts"/>
+          <include name="testRemoveContract"/>
+          <include name="testGetContractById"/>
+        </methods>
+      </class> <!-- org.badcoding.dao.implementation.ContractDAOImplTest -->
+      <class name="org.badcoding.dao.implementation.TariffDAOImplTest">
+        <methods>
+          <include name="testAddTariff"/>
+          <include name="removeTariff"/>
+        </methods>
+      </class> <!-- org.badcoding.dao.implementation.TariffDAOImplTest -->
+      <class name="org.badcoding.dao.implementation.EventDAOImplTest">
+        <methods>
+          <include name="testGetEventById"/>
+          <include name="testListEventByDate"/>
+          <include name="testAddEvent"/>
+          <include name="testUpdateEvent"/>
+          <include name="testListEvents"/>
+        </methods>
+      </class> <!-- org.badcoding.dao.implementation.EventDAOImplTest -->
+      <class name="org.badcoding.dao.implementation.ServiceDAOImplTest">
+        <methods>
+          <include name="testListServices"/>
+          <include name="testGetServiceById"/>
+          <include name="testUpdateService"/>
+          <include name="testAddService"/>
+        </methods>
+      </class> <!-- org.badcoding.dao.implementation.ServiceDAOImplTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

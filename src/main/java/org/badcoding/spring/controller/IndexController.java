@@ -1,4 +1,3 @@
-/*
 package org.badcoding.spring.controller;
 
 
@@ -19,38 +18,9 @@ import org.springframework.validation.BindingResult;
 
 @Controller
 public class IndexController {
-    @Autowired
-    UserDAO user;
-
-    @Autowired
-    Customer customer;
-
-    @Autowired
-    Contract contract;
-
-    @Autowired
-    Tariff tariff;
-
-    @Autowired
-    Event event;
-
-    @Autowired
-    Services services;
-
-    @Value("${application.admin}")
-    private String admin;
-
-    @Value("${application.admin.password}")
-    private String admin_password;
 
     @RequestMapping("/")
     public String root(Map<String, Object> model) {
-        return "redirect:/index";
-    }
-
-    @RequestMapping("/set_locale")
-    public String set_locale(HttpServletRequest request, HttpServletResponse response, @RequestParam(value="locale", required=false) String locale) {
-        Application.localeResolver().setLocale(request, response, new Locale(locale));
         return "redirect:/index";
     }
 
@@ -62,6 +32,7 @@ public class IndexController {
         return "index";
     }
 
+/*
     @RequestMapping(value="/get_tickets", method=RequestMethod.GET)
     public @ResponseBody List<List<String>> get_tickets(@RequestParam int flight_id, @RequestParam int type) {
         List<Tickets> t = tickets.getByFlight(flights.getById(flight_id), (type == -1 ? null : type));
@@ -136,5 +107,5 @@ public class IndexController {
 
     }
 
-
-}    */
+*/
+}

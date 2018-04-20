@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="0.714" tests="20" errors="0" skipped="0" failures="20">
+  <properties>
+    <property name="idea.version" value="2018.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.162-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/narek/prac/MobileOperator"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/narek/prac/MobileOperator"/>
+    <property name="java.runtime.version" value="1.8.0_162-8u162-b12-0ubuntu0.16.04.2-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/home/narek/idea-IU-181.4203.550/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.13.0-38-generic"/>
+    <property name="user.home" value="/home/narek"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="narek"/>
+    <property name="java.class.path" value="/home/narek/idea-IU-181.4203.550/plugins/maven/lib/maven3/boot/plexus-classworlds-2.5.2.jar:/home/narek/idea-IU-181.4203.550/lib/idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2018.1 deploy -f pom.xml"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_162"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/home/narek/idea-IU-181.4203.550/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testAddService" classname="org.badcoding.dao.implementation.ServiceDAOImplTest" time="0.682">
+    <failure type="java.lang.ExceptionInInitializerError:"><![CDATA[java.lang.ExceptionInInitializerError: null
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:106)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.buildJdbcConnectionAccess(JdbcServicesImpl.java:260)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:94)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.badcoding.hibernate.logic.Database.<clinit>(Database.java:14)
+	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testAddService(ServiceDAOImplTest.java:15)
+]]></failure>
+    <system-out>Configuring TestNG with: TestNG652Configurator
+17:40:32.613 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+17:40:32.628 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -&gt; org.hibernate.type.BooleanType@376b4233
+17:40:32.628 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -&gt; org.hibernate.type.BooleanType@376b4233
+17:40:32.628 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Boolean -&gt; org.hibernate.type.BooleanType@376b4233
+17:40:32.629 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration numeric_boolean -&gt; org.hibernate.type.NumericBooleanType@b3d7190
+17:40:32.630 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration true_false -&gt; org.hibernate.type.TrueFalseType@52525845
+17:40:32.632 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration yes_no -&gt; org.hibernate.type.YesNoType@68ceda24
+17:40:32.634 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte -&gt; org.hibernate.type.ByteType@543788f3
+17:40:32.635 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte -&gt; org.hibernate.type.ByteType@543788f3
+17:40:32.635 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Byte -&gt; org.hibernate.type.ByteType@543788f3
+17:40:32.636 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration character -&gt; org.hibernate.type.CharacterType@71623278
+17:40:32.637 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration char -&gt; org.hibernate.type.CharacterType@71623278
+17:40:32.637 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Character -&gt; org.hibernate.type.CharacterType@71623278
+17:40:32.639 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration short -&gt; org.hibernate.type.ShortType@7ba18f1b
+17:40:32.639 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration short -&gt; org.hibernate.type.ShortType@7ba18f1b
+17:40:32.640 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Short -&gt; org.hibernate.type.ShortType@7ba18f1b
+17:40:32.644 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration integer -&gt; org.hibernate.type.IntegerType@6483f5ae
+17:40:32.644 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration int -&gt; org.hibernate.type.IntegerType@6483f5ae
+17:40:32.644 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Integer -&gt; org.hibernate.type.IntegerType@6483f5ae
+17:40:32.645 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration long -&gt; org.hibernate.type.LongType@57f23557
+17:40:32.646 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration long -&gt; org.hibernate.type.LongType@57f23557
+17:40:32.646 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Long -&gt; org.hibernate.type.LongType@57f23557
+17:40:32.647 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration float -&gt; org.hibernate.type.FloatType@1d7acb34
+17:40:32.647 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration float -&gt; org.hibernate.type.FloatType@1d7acb34
+17:40:32.647 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Float -&gt; org.hibernate.type.FloatType@1d7acb34
+17:40:32.648 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration double -&gt; org.hibernate.type.DoubleType@1ad282e0
+17:40:32.648 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration double -&gt; org.hibernate.type.DoubleType@1ad282e0
+17:40:32.649 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Double -&gt; org.hibernate.type.DoubleType@1ad282e0
+17:40:32.650 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration big_decimal -&gt; org.hibernate.type.BigDecimalType@71d15f18
+17:40:32.650 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigDecimal -&gt; org.hibernate.type.BigDecimalType@71d15f18
+17:40:32.651 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration big_integer -&gt; org.hibernate.type.BigIntegerType@3d8314f0
+17:40:32.651 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigInteger -&gt; org.hibernate.type.BigIntegerType@3d8314f0
+17:40:32.652 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration string -&gt; org.hibernate.type.StringType@58a90037
+17:40:32.652 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.String -&gt; org.hibernate.type.StringType@58a90037
+17:40:32.653 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration nstring -&gt; org.hibernate.type.StringNVarcharType@2f490758
+17:40:32.653 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration ncharacter -&gt; org.hibernate.type.CharacterNCharType@588df31b
+17:40:32.654 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration url -&gt; org.hibernate.type.UrlType@32464a14
+17:40:32.654 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.net.URL -&gt; org.hibernate.type.UrlType@32464a14
+17:40:32.655 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration date -&gt; org.hibernate.type.DateType@5cdd8682
+17:40:32.656 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Date -&gt; org.hibernate.type.DateType@5cdd8682
+17:40:32.656 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration time -&gt; org.hibernate.type.TimeType@17776a8
+17:40:32.657 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Time -&gt; org.hibernate.type.TimeType@17776a8
+17:40:32.658 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration timestamp -&gt; org.hibernate.type.TimestampType@32a068d1
+17:40:32.658 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Timestamp -&gt; org.hibernate.type.TimestampType@32a068d1
+17:40:32.658 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Date -&gt; org.hibernate.type.TimestampType@32a068d1
+17:40:32.659 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration dbtimestamp -&gt; org.hibernate.type.DbTimestampType@701fc37a
+17:40:32.660 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration calendar -&gt; org.hibernate.type.CalendarType@5e25a92e
+17:40:32.660 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Calendar -&gt; org.hibernate.type.CalendarType@5e25a92e
+17:40:32.660 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -&gt; org.hibernate.type.CalendarType@5e25a92e
+17:40:32.661 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration calendar_date -&gt; org.hibernate.type.CalendarDateType@62fdb4a6
+17:40:32.662 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration locale -&gt; org.hibernate.type.LocaleType@23bb8443
+17:40:32.662 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Locale -&gt; org.hibernate.type.LocaleType@23bb8443
+17:40:32.662 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration currency -&gt; org.hibernate.type.CurrencyType@6a79c292
+17:40:32.663 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Currency -&gt; org.hibernate.type.CurrencyType@6a79c292
+17:40:32.663 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration timezone -&gt; org.hibernate.type.TimeZoneType@1445d7f
+17:40:32.663 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.TimeZone -&gt; org.hibernate.type.TimeZoneType@1445d7f
+17:40:32.664 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration class -&gt; org.hibernate.type.ClassType@10b48321
+17:40:32.664 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Class -&gt; org.hibernate.type.ClassType@10b48321
+17:40:32.665 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-binary -&gt; org.hibernate.type.UUIDBinaryType@3d3fcdb0
+17:40:32.665 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.UUID -&gt; org.hibernate.type.UUIDBinaryType@3d3fcdb0
+17:40:32.665 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-char -&gt; org.hibernate.type.UUIDCharType@64d7f7e0
+17:40:32.666 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration pg-uuid -&gt; org.hibernate.type.PostgresUUIDType@28c4711c
+17:40:32.667 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration binary -&gt; org.hibernate.type.BinaryType@516be40f
+17:40:32.667 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte[] -&gt; org.hibernate.type.BinaryType@516be40f
+17:40:32.668 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [B -&gt; org.hibernate.type.BinaryType@516be40f
+17:40:32.669 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-binary -&gt; org.hibernate.type.WrapperBinaryType@221af3c0
+17:40:32.669 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration Byte[] -&gt; org.hibernate.type.WrapperBinaryType@221af3c0
+17:40:32.669 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -&gt; org.hibernate.type.WrapperBinaryType@221af3c0
+17:40:32.671 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration image -&gt; org.hibernate.type.ImageType@551bdc27
+17:40:32.671 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration characters -&gt; org.hibernate.type.CharArrayType@7364985f
+17:40:32.672 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration char[] -&gt; org.hibernate.type.CharArrayType@7364985f
+17:40:32.672 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [C -&gt; org.hibernate.type.CharArrayType@7364985f
+17:40:32.673 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-characters -&gt; org.hibernate.type.CharacterArrayType@525b461a
+17:40:32.673 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -&gt; org.hibernate.type.CharacterArrayType@525b461a
+17:40:32.673 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration Character[] -&gt; org.hibernate.type.CharacterArrayType@525b461a
+17:40:32.673 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration text -&gt; org.hibernate.type.TextType@3f200884
+17:40:32.674 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration ntext -&gt; org.hibernate.type.NTextType@345965f2
+17:40:32.676 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration blob -&gt; org.hibernate.type.BlobType@62e136d3
+17:40:32.676 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Blob -&gt; org.hibernate.type.BlobType@62e136d3
+17:40:32.677 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob -&gt; org.hibernate.type.MaterializedBlobType@4206a205
+17:40:32.679 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration clob -&gt; org.hibernate.type.ClobType@667a738
+17:40:32.679 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Clob -&gt; org.hibernate.type.ClobType@667a738
+17:40:32.681 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration nclob -&gt; org.hibernate.type.NClobType@4c6e276e
+17:40:32.681 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.NClob -&gt; org.hibernate.type.NClobType@4c6e276e
+17:40:32.681 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob -&gt; org.hibernate.type.MaterializedClobType@35083305
+17:40:32.681 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob -&gt; org.hibernate.type.MaterializedNClobType@55a1c291
+17:40:32.682 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration serializable -&gt; org.hibernate.type.SerializableType@3ec300f1
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration object -&gt; org.hibernate.type.ObjectType@55ca8de8
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -&gt; org.hibernate.type.ObjectType@55ca8de8
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_date -&gt; org.hibernate.type.AdaptedImmutableType@240237d2
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_time -&gt; org.hibernate.type.AdaptedImmutableType@25a65b77
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_timestamp -&gt; org.hibernate.type.AdaptedImmutableType@2ed0fbae
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_dbtimestamp -&gt; org.hibernate.type.AdaptedImmutableType@212bf671
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar -&gt; org.hibernate.type.AdaptedImmutableType@14a2f921
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_date -&gt; org.hibernate.type.AdaptedImmutableType@3c87521
+17:40:32.684 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_binary -&gt; org.hibernate.type.AdaptedImmutableType@2aece37d
+17:40:32.685 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_serializable -&gt; org.hibernate.type.AdaptedImmutableType@548a102f
+17:40:32.693 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+17:40:32.697 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.1.Final}
+17:40:32.698 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+17:40:32.699 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+17:40:32.705 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid2] -&gt; [org.hibernate.id.UUIDGenerator]
+17:40:32.705 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [guid] -&gt; [org.hibernate.id.GUIDGenerator]
+17:40:32.706 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid] -&gt; [org.hibernate.id.UUIDHexGenerator]
+17:40:32.706 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid.hex] -&gt; [org.hibernate.id.UUIDHexGenerator]
+17:40:32.706 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [hilo] -&gt; [org.hibernate.id.TableHiLoGenerator]
+17:40:32.707 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [assigned] -&gt; [org.hibernate.id.Assigned]
+17:40:32.707 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [identity] -&gt; [org.hibernate.id.IdentityGenerator]
+17:40:32.708 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [select] -&gt; [org.hibernate.id.SelectGenerator]
+17:40:32.708 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence] -&gt; [org.hibernate.id.SequenceGenerator]
+17:40:32.708 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [seqhilo] -&gt; [org.hibernate.id.SequenceHiLoGenerator]
+17:40:32.709 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [increment] -&gt; [org.hibernate.id.IncrementGenerator]
+17:40:32.709 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [foreign] -&gt; [org.hibernate.id.ForeignGenerator]
+17:40:32.710 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence-identity] -&gt; [org.hibernate.id.SequenceIdentityGenerator]
+17:40:32.710 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-sequence] -&gt; [org.hibernate.id.enhanced.SequenceStyleGenerator]
+17:40:32.710 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-table] -&gt; [org.hibernate.id.enhanced.TableGenerator]
+17:40:32.715 [main] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+17:40:32.716 [main] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+17:40:32.717 [main] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+17:40:32.726 [main] DEBUG o.h.b.r.s.i.StrategySelectorImpl - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5] -&gt; [org.hibernate.dialect.MySQL5Dialect] (replacing [org.hibernate.dialect.MySQL5Dialect])
+17:40:32.727 [main] DEBUG o.h.b.r.s.i.StrategySelectorImpl - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5InnoDB] -&gt; [org.hibernate.dialect.MySQL5InnoDBDialect] (replacing [org.hibernate.dialect.MySQL5InnoDBDialect])
+17:40:32.750 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: /hibernate.cfg.xml
+17:40:32.751 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: /hibernate.cfg.xml
+17:40:32.799 [main] DEBUG o.h.i.util.xml.DTDEntityResolver - Trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd]
+17:40:32.800 [main] WARN  o.h.i.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:40:32.800 [main] DEBUG o.h.i.util.xml.DTDEntityResolver - Attempting to resolve on classpath under org/hibernate/
+17:40:32.800 [main] DEBUG o.h.i.util.xml.DTDEntityResolver - Located [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd] in classpath
+17:40:32.860 [main] DEBUG org.hibernate.cfg.Configuration - connection.driver_class=com.mysql.jdbc.Driver
+17:40:32.861 [main] DEBUG org.hibernate.cfg.Configuration - connection.url=jdbc:mysql://localhost:3306/MobileOperator
+17:40:32.861 [main] DEBUG org.hibernate.cfg.Configuration - connection.pool_size=1
+17:40:32.861 [main] DEBUG org.hibernate.cfg.Configuration - dialect=org.hibernate.dialect.MySQLDialect
+17:40:32.861 [main] DEBUG org.hibernate.cfg.Configuration - current_session_context_class=thread
+17:40:32.861 [main] DEBUG org.hibernate.cfg.Configuration - show_sql=true
+17:40:32.861 [main] DEBUG org.hibernate.cfg.Configuration - Session-factory config [null] named class [org.badcoding.hibernate.stored.Contract] for mapping
+17:40:32.867 [main] DEBUG org.hibernate.cfg.Configuration - Session-factory config [null] named class [org.badcoding.hibernate.stored.Customer] for mapping
+17:40:32.890 [main] DEBUG org.hibernate.cfg.Configuration - Session-factory config [null] named class [org.badcoding.hibernate.stored.Event] for mapping
+17:40:32.895 [main] DEBUG org.hibernate.cfg.Configuration - Session-factory config [null] named class [org.badcoding.hibernate.stored.Services] for mapping
+17:40:32.896 [main] DEBUG org.hibernate.cfg.Configuration - Session-factory config [null] named class [org.badcoding.hibernate.stored.Tariff] for mapping
+17:40:32.906 [main] DEBUG org.hibernate.cfg.Configuration - Session-factory config [null] named class [org.badcoding.hibernate.stored.User] for mapping
+17:40:32.907 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+17:40:32.907 [main] DEBUG org.hibernate.cfg.Configuration - Properties: {idea.version=2018.1, java.runtime.name=OpenJDK Runtime Environment, sun.boot.library.path=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64, java.vm.version=25.162-b12, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=OpenJDK 64-Bit Server VM, file.encoding.pkg=sun.io, user.country=US, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/home/narek/prac/MobileOperator, java.runtime.version=1.8.0_162-8u162-b12-0ubuntu0.16.04.2-b12, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, basedir=/home/narek/prac/MobileOperator, hibernate.current_session_context_class=thread, java.endorsed.dirs=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed, os.arch=amd64, java.io.tmpdir=/tmp, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, os.name=Linux, sun.jnu.encoding=UTF-8, java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, surefire.test.class.path=/home/narek/prac/MobileOperator/target/test-classes:/home/narek/prac/MobileOperator/target/classes:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-web-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot/1.1.0.BUILD-SNAPSHOT/spring-boot-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-logging-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/slf4j/jul-to-slf4j/1.7.7/jul-to-slf4j-1.7.7.jar:/home/narek/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.7/log4j-over-slf4j-1.7.7.jar:/home/narek/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar:/home/narek/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar:/home/narek/.m2/repository/org/yaml/snakeyaml/1.13/snakeyaml-1.13.jar:/home/narek/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.3.3/jackson-databind-2.3.3.jar:/home/narek/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.3.3/jackson-annotations-2.3.3.jar:/home/narek/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.3/jackson-core-2.3.3.jar:/home/narek/.m2/repository/org/hibernate/hibernate-validator/5.0.3.Final/hibernate-validator-5.0.3.Final.jar:/home/narek/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/narek/.m2/repository/org/jboss/logging/jboss-logging/3.1.1.GA/jboss-logging-3.1.1.GA.jar:/home/narek/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar:/home/narek/.m2/repository/org/springframework/spring-core/4.0.5.RELEASE/spring-core-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-web/4.0.5.RELEASE/spring-web-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-aop/4.0.5.RELEASE/spring-aop-4.0.5.RELEASE.jar:/home/narek/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/narek/.m2/repository/org/springframework/spring-beans/4.0.5.RELEASE/spring-beans-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-context/4.0.5.RELEASE/spring-context-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-webmvc/4.0.5.RELEASE/spring-webmvc-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-expression/4.0.5.RELEASE/spring-expression-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-tomcat-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/7.0.54/tomcat-embed-core-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/7.0.54/tomcat-embed-el-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.54/tomcat-embed-logging-juli-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.54/tomcat-embed-jasper-7.0.54.jar:/home/narek/.m2/repository/org/eclipse/jdt/core/compiler/ecj/P20140317-1600/ecj-P20140317-1600.jar:/home/narek/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar:/home/narek/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-test/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-test-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/narek/.m2/repository/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar:/home/narek/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar:/home/narek/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/narek/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/narek/.m2/repository/org/springframework/spring-test/4.0.5.RELEASE/spring-test-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-data-jpa-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-aop/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-aop-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/aspectj/aspectjrt/1.8.0/aspectjrt-1.8.0.jar:/home/narek/.m2/repository/org/aspectj/aspectjweaver/1.8.0/aspectjweaver-1.8.0.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-jdbc-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/spring-jdbc/4.0.5.RELEASE/spring-jdbc-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/apache/tomcat/tomcat-jdbc/7.0.54/tomcat-jdbc-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/tomcat-juli/7.0.54/tomcat-juli-7.0.54.jar:/home/narek/.m2/repository/org/springframework/spring-tx/4.0.5.RELEASE/spring-tx-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/hibernate/hibernate-entitymanager/4.3.1.Final/hibernate-entitymanager-4.3.1.Final.jar:/home/narek/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar:/home/narek/.m2/repository/org/hibernate/hibernate-core/4.3.1.Final/hibernate-core-4.3.1.Final.jar:/home/narek/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/narek/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar:/home/narek/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/narek/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/home/narek/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar:/home/narek/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar:/home/narek/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/home/narek/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/narek/.m2/repository/org/springframework/spring-orm/4.0.5.RELEASE/spring-orm-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/data/spring-data-jpa/1.6.0.RELEASE/spring-data-jpa-1.6.0.RELEASE.jar:/home/narek/.m2/repository/org/springframework/data/spring-data-commons/1.8.0.RELEASE/spring-data-commons-1.8.0.RELEASE.jar:/home/narek/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.jar:/home/narek/.m2/repository/org/springframework/spring-aspects/4.0.5.RELEASE/spring-aspects-4.0.5.RELEASE.jar:/home/narek/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar:/home/narek/.m2/repository/org/apache/directory/studio/org.apache.commons.io/2.4/org.apache.commons.io-2.4.jar:/home/narek/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/home/narek/.m2/repository/org/apache/clerezza/ext/org.json.simple/0.3-incubating/org.json.simple-0.3-incubating.jar:/home/narek/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/home/narek/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar:/home/narek/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/home/narek/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/narek/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/home/narek/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.15/surefire-testng-utils-2.15.jar:/home/narek/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.15/surefire-grouper-2.15.jar:, java.specification.name=Java Platform API Specification, java.class.version=52.0, hibernate.connection.pool_size=1, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=4.13.0-38-generic, user.home=/home/narek, user.timezone=Europe/Moscow, java.awt.printerjob=sun.print.PSPrinterJob, file.encoding=UTF-8, java.specification.version=1.8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, show_sql=true, java.class.path=/home/narek/.m2/repository/org/apache/maven/surefire/surefire-booter/2.15/surefire-booter-2.15.jar:/home/narek/.m2/repository/org/apache/maven/surefire/surefire-api/2.15/surefire-api-2.15.jar:/home/narek/prac/MobileOperator/target/test-classes:/home/narek/prac/MobileOperator/target/classes:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-web-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot/1.1.0.BUILD-SNAPSHOT/spring-boot-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-logging-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/slf4j/jul-to-slf4j/1.7.7/jul-to-slf4j-1.7.7.jar:/home/narek/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.7/log4j-over-slf4j-1.7.7.jar:/home/narek/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar:/home/narek/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar:/home/narek/.m2/repository/org/yaml/snakeyaml/1.13/snakeyaml-1.13.jar:/home/narek/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.3.3/jackson-databind-2.3.3.jar:/home/narek/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.3.3/jackson-annotations-2.3.3.jar:/home/narek/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.3/jackson-core-2.3.3.jar:/home/narek/.m2/repository/org/hibernate/hibernate-validator/5.0.3.Final/hibernate-validator-5.0.3.Final.jar:/home/narek/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/narek/.m2/repository/org/jboss/logging/jboss-logging/3.1.1.GA/jboss-logging-3.1.1.GA.jar:/home/narek/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar:/home/narek/.m2/repository/org/springframework/spring-core/4.0.5.RELEASE/spring-core-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-web/4.0.5.RELEASE/spring-web-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-aop/4.0.5.RELEASE/spring-aop-4.0.5.RELEASE.jar:/home/narek/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/narek/.m2/repository/org/springframework/spring-beans/4.0.5.RELEASE/spring-beans-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-context/4.0.5.RELEASE/spring-context-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-webmvc/4.0.5.RELEASE/spring-webmvc-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/spring-expression/4.0.5.RELEASE/spring-expression-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-tomcat-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/7.0.54/tomcat-embed-core-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/7.0.54/tomcat-embed-el-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.54/tomcat-embed-logging-juli-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.54/tomcat-embed-jasper-7.0.54.jar:/home/narek/.m2/repository/org/eclipse/jdt/core/compiler/ecj/P20140317-1600/ecj-P20140317-1600.jar:/home/narek/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar:/home/narek/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-test/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-test-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/narek/.m2/repository/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar:/home/narek/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar:/home/narek/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/narek/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/narek/.m2/repository/org/springframework/spring-test/4.0.5.RELEASE/spring-test-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-data-jpa-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-aop/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-aop-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/aspectj/aspectjrt/1.8.0/aspectjrt-1.8.0.jar:/home/narek/.m2/repository/org/aspectj/aspectjweaver/1.8.0/aspectjweaver-1.8.0.jar:/home/narek/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/1.1.0.BUILD-SNAPSHOT/spring-boot-starter-jdbc-1.1.0.BUILD-SNAPSHOT.jar:/home/narek/.m2/repository/org/springframework/spring-jdbc/4.0.5.RELEASE/spring-jdbc-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/apache/tomcat/tomcat-jdbc/7.0.54/tomcat-jdbc-7.0.54.jar:/home/narek/.m2/repository/org/apache/tomcat/tomcat-juli/7.0.54/tomcat-juli-7.0.54.jar:/home/narek/.m2/repository/org/springframework/spring-tx/4.0.5.RELEASE/spring-tx-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/hibernate/hibernate-entitymanager/4.3.1.Final/hibernate-entitymanager-4.3.1.Final.jar:/home/narek/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar:/home/narek/.m2/repository/org/hibernate/hibernate-core/4.3.1.Final/hibernate-core-4.3.1.Final.jar:/home/narek/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/narek/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar:/home/narek/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/narek/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/home/narek/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar:/home/narek/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar:/home/narek/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/home/narek/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/narek/.m2/repository/org/springframework/spring-orm/4.0.5.RELEASE/spring-orm-4.0.5.RELEASE.jar:/home/narek/.m2/repository/org/springframework/data/spring-data-jpa/1.6.0.RELEASE/spring-data-jpa-1.6.0.RELEASE.jar:/home/narek/.m2/repository/org/springframework/data/spring-data-commons/1.8.0.RELEASE/spring-data-commons-1.8.0.RELEASE.jar:/home/narek/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.jar:/home/narek/.m2/repository/org/springframework/spring-aspects/4.0.5.RELEASE/spring-aspects-4.0.5.RELEASE.jar:/home/narek/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar:/home/narek/.m2/repository/org/apache/directory/studio/org.apache.commons.io/2.4/org.apache.commons.io-2.4.jar:/home/narek/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/home/narek/.m2/repository/org/apache/clerezza/ext/org.json.simple/0.3-incubating/org.json.simple-0.3-incubating.jar:/home/narek/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/home/narek/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar:/home/narek/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/home/narek/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/narek/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/home/narek/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.15/surefire-testng-utils-2.15.jar:/home/narek/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.15/surefire-grouper-2.15.jar:/home/narek/.m2/repository/org/apache/maven/surefire/surefire-testng/2.15/surefire-testng-2.15.jar:/home/narek/.m2/repository/org/apache/maven/surefire/common-java5/2.15/common-java5-2.15.jar, user.name=narek, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, current_session_context_class=thread, java.vm.specification.version=1.8, sun.java.command=org.apache.maven.surefire.booter.ForkedBooter /home/narek/prac/MobileOperator/target/surefire/surefire6802017874663163574tmp /home/narek/prac/MobileOperator/target/surefire/surefire_04747097788891446789tmp, java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre, sun.arch.data.model=64, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.connection.url=jdbc:mysql://localhost:3306/MobileOperator, connection.pool_size=1, user.language=en, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.X11.XToolkit, java.vm.info=mixed mode, java.version=1.8.0_162, java.ext.dirs=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext, sun.boot.class.path=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes, java.vendor=Oracle Corporation, localRepository=/home/narek/.m2/repository, connection.driver_class=com.mysql.jdbc.Driver, file.separator=/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=gnome, connection.url=jdbc:mysql://localhost:3306/MobileOperator, dialect=org.hibernate.dialect.MySQLDialect, sun.cpu.isalist=}
+17:40:32.910 [main] DEBUG o.h.service.spi.ServiceBinding - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+17:40:32.910 [main] DEBUG org.hibernate.cfg.Configuration - Preparing to build session factory with filters : {}
+17:40:32.915 [main] WARN  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+17:40:32.919 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/MobileOperator]
+17:40:32.919 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {}
+17:40:32.920 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+17:40:32.920 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+17:40:32.920 [main] DEBUG o.h.e.j.c.i.DriverManagerConnectionProviderImpl - Initializing Connection pool with 1 Connections
+</system-out>
+  </testcase>
+  <testcase name="testGetServiceById" classname="org.badcoding.dao.implementation.ServiceDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testGetServiceById(ServiceDAOImplTest.java:32)
+</failure>
+  </testcase>
+  <testcase name="testListServices" classname="org.badcoding.dao.implementation.ServiceDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ServiceDAOImpl.listServices(ServiceDAOImpl.java:81)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testListServices(ServiceDAOImplTest.java:38)
+</failure>
+  </testcase>
+  <testcase name="testUpdateService" classname="org.badcoding.dao.implementation.ServiceDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testUpdateService(ServiceDAOImplTest.java:24)
+</failure>
+  </testcase>
+  <testcase name="testAddEvent" classname="org.badcoding.dao.implementation.EventDAOImplTest" time="0.002">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testAddEvent(EventDAOImplTest.java:19)
+</failure>
+  </testcase>
+  <testcase name="testGetEventById" classname="org.badcoding.dao.implementation.EventDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testGetEventById(EventDAOImplTest.java:45)
+</failure>
+  </testcase>
+  <testcase name="testListEventByDate" classname="org.badcoding.dao.implementation.EventDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.listEventByDate(EventDAOImpl.java:83)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testListEventByDate(EventDAOImplTest.java:63)
+</failure>
+  </testcase>
+  <testcase name="testListEvents" classname="org.badcoding.dao.implementation.EventDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.listEvents(EventDAOImpl.java:108)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testListEvents(EventDAOImplTest.java:51)
+</failure>
+  </testcase>
+  <testcase name="testUpdateEvent" classname="org.badcoding.dao.implementation.EventDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testUpdateEvent(EventDAOImplTest.java:28)
+</failure>
+  </testcase>
+  <testcase name="testAddCustomer" classname="org.badcoding.dao.implementation.CustomerDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.CustomerDAOImplTest.testAddCustomer(CustomerDAOImplTest.java:15)
+</failure>
+  </testcase>
+  <testcase name="testGetCustomerById" classname="org.badcoding.dao.implementation.CustomerDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.CustomerDAOImplTest.testGetCustomerById(CustomerDAOImplTest.java:34)
+</failure>
+  </testcase>
+  <testcase name="testUpdateCustomer" classname="org.badcoding.dao.implementation.CustomerDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.CustomerDAOImplTest.testUpdateCustomer(CustomerDAOImplTest.java:26)
+</failure>
+  </testcase>
+  <testcase name="removeTariff" classname="org.badcoding.dao.implementation.TariffDAOImplTest" time="0.019">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.TariffDAOImpl.addTariff(TariffDAOImpl.java:21)
+	at org.badcoding.dao.implementation.TariffDAOImplTest.removeTariff(TariffDAOImplTest.java:30)
+</failure>
+  </testcase>
+  <testcase name="testAddTariff" classname="org.badcoding.dao.implementation.TariffDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.TariffDAOImpl.getTariffById(TariffDAOImpl.java:64)
+	at org.badcoding.dao.implementation.TariffDAOImplTest.testAddTariff(TariffDAOImplTest.java:15)
+</failure>
+  </testcase>
+  <testcase name="testAddContract" classname="org.badcoding.dao.implementation.ContractDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testAddContract(ContractDAOImplTest.java:17)
+</failure>
+  </testcase>
+  <testcase name="testGetContractById" classname="org.badcoding.dao.implementation.ContractDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testGetContractById(ContractDAOImplTest.java:52)
+</failure>
+  </testcase>
+  <testcase name="testListContracts" classname="org.badcoding.dao.implementation.ContractDAOImplTest" time="0">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.listContracts(ContractDAOImpl.java:82)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testListContracts(ContractDAOImplTest.java:58)
+</failure>
+  </testcase>
+  <testcase name="testListContractsOfCustomer" classname="org.badcoding.dao.implementation.ContractDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testListContractsOfCustomer(ContractDAOImplTest.java:69)
+</failure>
+  </testcase>
+  <testcase name="testRemoveContract" classname="org.badcoding.dao.implementation.ContractDAOImplTest" time="0.001">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testRemoveContract(ContractDAOImplTest.java:44)
+</failure>
+  </testcase>
+  <testcase name="testUpdateContract" classname="org.badcoding.dao.implementation.ContractDAOImplTest" time="0.004">
+    <failure message="Could not initialize class org.badcoding.hibernate.logic.Database" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testUpdateContract(ContractDAOImplTest.java:36)
+</failure>
+  </testcase>
+</testsuite>

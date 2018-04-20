@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 20 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Command_line_suite">
+              <span class="suite-name border-failed">Command line suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Command_line_suite">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Command_line_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Command_line_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Command_line_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Command_line_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Command_line_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Command_line_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">20 methods, 20 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods failed suite-Command_line_suite"> (hide)</a> <!-- hide-methods failed suite-Command_line_suite -->
+                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods failed suite-Command_line_suite"> (show)</a> <!-- show-methods failed suite-Command_line_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Command_line_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.TariffDAOImplTest" hash-for-method="removeTariff">removeTariff</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ContractDAOImplTest" hash-for-method="testAddContract">testAddContract</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.CustomerDAOImplTest" hash-for-method="testAddCustomer">testAddCustomer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.EventDAOImplTest" hash-for-method="testAddEvent">testAddEvent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ServiceDAOImplTest" hash-for-method="testAddService">testAddService</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.TariffDAOImplTest" hash-for-method="testAddTariff">testAddTariff</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ContractDAOImplTest" hash-for-method="testGetContractById">testGetContractById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.CustomerDAOImplTest" hash-for-method="testGetCustomerById">testGetCustomerById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.EventDAOImplTest" hash-for-method="testGetEventById">testGetEventById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ServiceDAOImplTest" hash-for-method="testGetServiceById">testGetServiceById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ContractDAOImplTest" hash-for-method="testListContracts">testListContracts</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ContractDAOImplTest" hash-for-method="testListContractsOfCustomer">testListContractsOfCustomer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.EventDAOImplTest" hash-for-method="testListEventByDate">testListEventByDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.EventDAOImplTest" hash-for-method="testListEvents">testListEvents</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ServiceDAOImplTest" hash-for-method="testListServices">testListServices</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ContractDAOImplTest" hash-for-method="testRemoveContract">testRemoveContract</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ContractDAOImplTest" hash-for-method="testUpdateContract">testUpdateContract</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.CustomerDAOImplTest" hash-for-method="testUpdateCustomer">testUpdateCustomer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.EventDAOImplTest" hash-for-method="testUpdateEvent">testUpdateEvent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="org.badcoding.dao.implementation.ServiceDAOImplTest" hash-for-method="testUpdateService">testUpdateService</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Command_line_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.badcoding.dao.implementation.CustomerDAOImplTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddCustomer">
+                  </a> <!-- testAddCustomer -->
+                  <span class="method-name">testAddCustomer</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.CustomerDAOImplTest.testAddCustomer(CustomerDAOImplTest.java:15)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetCustomerById">
+                  </a> <!-- testGetCustomerById -->
+                  <span class="method-name">testGetCustomerById</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.CustomerDAOImplTest.testGetCustomerById(CustomerDAOImplTest.java:34)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateCustomer">
+                  </a> <!-- testUpdateCustomer -->
+                  <span class="method-name">testUpdateCustomer</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.CustomerDAOImplTest.testUpdateCustomer(CustomerDAOImplTest.java:26)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.badcoding.dao.implementation.ContractDAOImplTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddContract">
+                  </a> <!-- testAddContract -->
+                  <span class="method-name">testAddContract</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testAddContract(ContractDAOImplTest.java:17)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetContractById">
+                  </a> <!-- testGetContractById -->
+                  <span class="method-name">testGetContractById</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testGetContractById(ContractDAOImplTest.java:52)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListContracts">
+                  </a> <!-- testListContracts -->
+                  <span class="method-name">testListContracts</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.listContracts(ContractDAOImpl.java:82)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testListContracts(ContractDAOImplTest.java:58)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListContractsOfCustomer">
+                  </a> <!-- testListContractsOfCustomer -->
+                  <span class="method-name">testListContractsOfCustomer</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testListContractsOfCustomer(ContractDAOImplTest.java:69)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testRemoveContract">
+                  </a> <!-- testRemoveContract -->
+                  <span class="method-name">testRemoveContract</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testRemoveContract(ContractDAOImplTest.java:44)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateContract">
+                  </a> <!-- testUpdateContract -->
+                  <span class="method-name">testUpdateContract</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+	at org.badcoding.dao.implementation.ContractDAOImplTest.testUpdateContract(ContractDAOImplTest.java:36)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.badcoding.dao.implementation.TariffDAOImplTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="removeTariff">
+                  </a> <!-- removeTariff -->
+                  <span class="method-name">removeTariff</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.TariffDAOImpl.addTariff(TariffDAOImpl.java:21)
+	at org.badcoding.dao.implementation.TariffDAOImplTest.removeTariff(TariffDAOImplTest.java:30)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddTariff">
+                  </a> <!-- testAddTariff -->
+                  <span class="method-name">testAddTariff</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.TariffDAOImpl.getTariffById(TariffDAOImpl.java:64)
+	at org.badcoding.dao.implementation.TariffDAOImplTest.testAddTariff(TariffDAOImplTest.java:15)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.badcoding.dao.implementation.EventDAOImplTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddEvent">
+                  </a> <!-- testAddEvent -->
+                  <span class="method-name">testAddEvent</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testAddEvent(EventDAOImplTest.java:19)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetEventById">
+                  </a> <!-- testGetEventById -->
+                  <span class="method-name">testGetEventById</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testGetEventById(EventDAOImplTest.java:45)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListEventByDate">
+                  </a> <!-- testListEventByDate -->
+                  <span class="method-name">testListEventByDate</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.listEventByDate(EventDAOImpl.java:83)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testListEventByDate(EventDAOImplTest.java:63)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListEvents">
+                  </a> <!-- testListEvents -->
+                  <span class="method-name">testListEvents</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.listEvents(EventDAOImpl.java:108)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testListEvents(EventDAOImplTest.java:51)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateEvent">
+                  </a> <!-- testUpdateEvent -->
+                  <span class="method-name">testUpdateEvent</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
+	at org.badcoding.dao.implementation.EventDAOImplTest.testUpdateEvent(EventDAOImplTest.java:28)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.badcoding.dao.implementation.ServiceDAOImplTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddService">
+                  </a> <!-- testAddService -->
+                  <span class="method-name">testAddService</span>
+                  <div class="stack-trace">java.lang.ExceptionInInitializerError
+	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testAddService(ServiceDAOImplTest.java:15)
+Caused by: org.hibernate.exception.JDBCConnectionException: Error calling Driver#connect
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator$1$1.convert(BasicConnectionCreator.java:122)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:140)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:58)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:106)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.buildJdbcConnectionAccess(JdbcServicesImpl.java:260)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:94)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.badcoding.hibernate.logic.Database.&lt;clinit&gt;(Database.java:14)
+	... 31 more
+Caused by: java.sql.SQLException: Access denied for user &apos;&apos;@&apos;localhost&apos; (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.&lt;init&gt;(JDBC4Connection.java:46)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	... 44 more
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetServiceById">
+                  </a> <!-- testGetServiceById -->
+                  <span class="method-name">testGetServiceById</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testGetServiceById(ServiceDAOImplTest.java:32)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListServices">
+                  </a> <!-- testListServices -->
+                  <span class="method-name">testListServices</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ServiceDAOImpl.listServices(ServiceDAOImpl.java:81)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testListServices(ServiceDAOImplTest.java:38)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateService">
+                  </a> <!-- testUpdateService -->
+                  <span class="method-name">testUpdateService</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+	at org.badcoding.dao.implementation.ServiceDAOImplTest.testUpdateService(ServiceDAOImplTest.java:24)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
+        </div> <!-- panel Command_line_suite -->
+        <div panel-name="test-xml-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;Command line suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Command line test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;org.badcoding.dao.implementation.ServiceDAOImplTest&quot;/&gt;
+      &lt;class name=&quot;org.badcoding.dao.implementation.EventDAOImplTest&quot;/&gt;
+      &lt;class name=&quot;org.badcoding.dao.implementation.CustomerDAOImplTest&quot;/&gt;
+      &lt;class name=&quot;org.badcoding.dao.implementation.TariffDAOImplTest&quot;/&gt;
+      &lt;class name=&quot;org.badcoding.dao.implementation.ContractDAOImplTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Command line test --&gt;
+&lt;/suite&gt; &lt;!-- Command line suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Command line test (5 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Command_line_suite');
+function tableData_Command_line_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(20);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testAddService')
+data.setCell(0, 2, 'org.badcoding.dao.implementation.ServiceDAOImplTest')
+data.setCell(0, 3, 678);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'removeTariff')
+data.setCell(1, 2, 'org.badcoding.dao.implementation.TariffDAOImplTest')
+data.setCell(1, 3, 18);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testGetContractById')
+data.setCell(2, 2, 'org.badcoding.dao.implementation.ContractDAOImplTest')
+data.setCell(2, 3, 1);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testAddEvent')
+data.setCell(3, 2, 'org.badcoding.dao.implementation.EventDAOImplTest')
+data.setCell(3, 3, 1);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testListContracts')
+data.setCell(4, 2, 'org.badcoding.dao.implementation.ContractDAOImplTest')
+data.setCell(4, 3, 1);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testListEvents')
+data.setCell(5, 2, 'org.badcoding.dao.implementation.EventDAOImplTest')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testGetCustomerById')
+data.setCell(6, 2, 'org.badcoding.dao.implementation.CustomerDAOImplTest')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testUpdateService')
+data.setCell(7, 2, 'org.badcoding.dao.implementation.ServiceDAOImplTest')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testUpdateEvent')
+data.setCell(8, 2, 'org.badcoding.dao.implementation.EventDAOImplTest')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testUpdateContract')
+data.setCell(9, 2, 'org.badcoding.dao.implementation.ContractDAOImplTest')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testListServices')
+data.setCell(10, 2, 'org.badcoding.dao.implementation.ServiceDAOImplTest')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testAddContract')
+data.setCell(11, 2, 'org.badcoding.dao.implementation.ContractDAOImplTest')
+data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testGetServiceById')
+data.setCell(12, 2, 'org.badcoding.dao.implementation.ServiceDAOImplTest')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testListContractsOfCustomer')
+data.setCell(13, 2, 'org.badcoding.dao.implementation.ContractDAOImplTest')
+data.setCell(13, 3, 0);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testAddTariff')
+data.setCell(14, 2, 'org.badcoding.dao.implementation.TariffDAOImplTest')
+data.setCell(14, 3, 0);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testListEventByDate')
+data.setCell(15, 2, 'org.badcoding.dao.implementation.EventDAOImplTest')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testGetEventById')
+data.setCell(16, 2, 'org.badcoding.dao.implementation.EventDAOImplTest')
+data.setCell(16, 3, 0);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testUpdateCustomer')
+data.setCell(17, 2, 'org.badcoding.dao.implementation.CustomerDAOImplTest')
+data.setCell(17, 3, 0);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'testRemoveContract')
+data.setCell(18, 2, 'org.badcoding.dao.implementation.ContractDAOImplTest')
+data.setCell(18, 3, 0);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'testAddCustomer')
+data.setCell(19, 2, 'org.badcoding.dao.implementation.CustomerDAOImplTest')
+data.setCell(19, 3, 0);
+window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 699 ms</span>
+              <div id="times-div-Command_line_suite">
+              </div> <!-- times-div-Command_line_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.badcoding.dao.implementation.ServiceDAOImplTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAddService</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetServiceById</span>
+                <span class="method-start">683 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testListServices</span>
+                <span class="method-start">684 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateService</span>
+                <span class="method-start">685 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.badcoding.dao.implementation.EventDAOImplTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAddEvent</span>
+                <span class="method-start">686 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetEventById</span>
+                <span class="method-start">688 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testListEventByDate</span>
+                <span class="method-start">688 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testListEvents</span>
+                <span class="method-start">689 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateEvent</span>
+                <span class="method-start">689 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.badcoding.dao.implementation.CustomerDAOImplTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAddCustomer</span>
+                <span class="method-start">690 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetCustomerById</span>
+                <span class="method-start">691 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateCustomer</span>
+                <span class="method-start">691 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.badcoding.dao.implementation.TariffDAOImplTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">removeTariff</span>
+                <span class="method-start">692 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAddTariff</span>
+                <span class="method-start">712 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.badcoding.dao.implementation.ContractDAOImplTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAddContract</span>
+                <span class="method-start">713 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetContractById</span>
+                <span class="method-start">713 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testListContracts</span>
+                <span class="method-start">714 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testListContractsOfCustomer</span>
+                <span class="method-start">715 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testRemoveContract</span>
+                <span class="method-start">716 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateContract</span>
+                <span class="method-start">717 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
