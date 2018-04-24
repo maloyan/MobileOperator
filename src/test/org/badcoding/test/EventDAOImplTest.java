@@ -1,12 +1,10 @@
-package org.badcoding.dao.implementation;
+package org.badcoding.test;
 
 import org.badcoding.hibernate.logic.Factory;
-import org.badcoding.hibernate.stored.Contract;
-import org.badcoding.hibernate.stored.Event;
+import org.badcoding.hibernate.stored.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 

@@ -1,7 +1,8 @@
-package org.badcoding.dao.implementation;
+package org.badcoding.test;
 
 import org.badcoding.hibernate.logic.Factory;
-import org.badcoding.hibernate.stored.Services;
+import org.badcoding.hibernate.stored.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;

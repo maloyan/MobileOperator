@@ -1,13 +1,11 @@
-package org.badcoding.dao.implementation;
+package org.badcoding.test;
 
-import org.badcoding.hibernate.stored.Tariff;
 import org.badcoding.hibernate.logic.Factory;
+import org.badcoding.hibernate.stored.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
-
-import static org.testng.Assert.*;
-
 public class TariffDAOImplTest {
 
     @Test

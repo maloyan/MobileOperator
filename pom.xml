@@ -7,9 +7,9 @@
         <version>1.1.0.BUILD-SNAPSHOT</version>
     </parent>
     <groupId>org.badcoding</groupId>
-    <artifactId>MobileOperatorBoot</artifactId>
+    <artifactId>MakeAwayTicketsBoot</artifactId>
     <packaging>war</packaging>
-    <name>Mobile Operator</name>
+    <name>Make Away Tickets</name>
     <properties>
         <main.basedir>${basedir}/../..</main.basedir>
         <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
@@ -61,12 +61,6 @@
             <artifactId>org.json.simple</artifactId>
             <version>0.3-incubating</version>
         </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -79,14 +73,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>
