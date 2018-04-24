@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 20, Failures: 20, Errors: 0, Skipped: 0, Time elapsed: 1.079 sec <<< FAILURE! - in TestSuite
-testAddService(org.badcoding.dao.implementation.ServiceDAOImplTest)  Time elapsed: 0.682 sec  <<< FAILURE!
+Tests run: 20, Failures: 20, Errors: 0, Skipped: 0, Time elapsed: 0.668 sec <<< FAILURE! - in TestSuite
+testAddService(org.badcoding.dao.implementation.ServiceDAOImplTest)  Time elapsed: 0.413 sec  <<< FAILURE!
 java.lang.ExceptionInInitializerError: null
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
@@ -54,7 +54,7 @@ java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hiberna
 	at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
 	at org.badcoding.dao.implementation.ServiceDAOImplTest.testUpdateService(ServiceDAOImplTest.java:24)
 
-testAddEvent(org.badcoding.dao.implementation.EventDAOImplTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testAddEvent(org.badcoding.dao.implementation.EventDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.EventDAOImpl.getEventById(EventDAOImpl.java:65)
 	at org.badcoding.dao.implementation.EventDAOImplTest.testAddEvent(EventDAOImplTest.java:19)
@@ -89,22 +89,22 @@ java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hiberna
 	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
 	at org.badcoding.dao.implementation.CustomerDAOImplTest.testGetCustomerById(CustomerDAOImplTest.java:34)
 
-testUpdateCustomer(org.badcoding.dao.implementation.CustomerDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testUpdateCustomer(org.badcoding.dao.implementation.CustomerDAOImplTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
 	at org.badcoding.dao.implementation.CustomerDAOImplTest.testUpdateCustomer(CustomerDAOImplTest.java:26)
 
-removeTariff(org.badcoding.dao.implementation.TariffDAOImplTest)  Time elapsed: 0.019 sec  <<< FAILURE!
+removeTariff(org.badcoding.dao.implementation.TariffDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.TariffDAOImpl.addTariff(TariffDAOImpl.java:21)
 	at org.badcoding.dao.implementation.TariffDAOImplTest.removeTariff(TariffDAOImplTest.java:30)
 
-testAddTariff(org.badcoding.dao.implementation.TariffDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testAddTariff(org.badcoding.dao.implementation.TariffDAOImplTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.TariffDAOImpl.getTariffById(TariffDAOImpl.java:64)
 	at org.badcoding.dao.implementation.TariffDAOImplTest.testAddTariff(TariffDAOImplTest.java:15)
 
-testAddContract(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0 sec  <<< FAILURE!
+testAddContract(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
 	at org.badcoding.dao.implementation.ContractDAOImplTest.testAddContract(ContractDAOImplTest.java:17)
@@ -114,12 +114,12 @@ java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hiberna
 	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
 	at org.badcoding.dao.implementation.ContractDAOImplTest.testGetContractById(ContractDAOImplTest.java:52)
 
-testListContracts(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0 sec  <<< FAILURE!
+testListContracts(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.ContractDAOImpl.listContracts(ContractDAOImpl.java:82)
 	at org.badcoding.dao.implementation.ContractDAOImplTest.testListContracts(ContractDAOImplTest.java:58)
 
-testListContractsOfCustomer(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+testListContractsOfCustomer(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.CustomerDAOImpl.getCustomerById(CustomerDAOImpl.java:65)
 	at org.badcoding.dao.implementation.ContractDAOImplTest.testListContractsOfCustomer(ContractDAOImplTest.java:69)
@@ -129,7 +129,7 @@ java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hiberna
 	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
 	at org.badcoding.dao.implementation.ContractDAOImplTest.testRemoveContract(ContractDAOImplTest.java:44)
 
-testUpdateContract(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+testUpdateContract(org.badcoding.dao.implementation.ContractDAOImplTest)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
 	at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
 	at org.badcoding.dao.implementation.ContractDAOImplTest.testUpdateContract(ContractDAOImplTest.java:36)

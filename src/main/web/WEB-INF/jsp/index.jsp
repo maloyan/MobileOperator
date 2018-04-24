@@ -29,11 +29,10 @@
 </head>
 
 <body>
-asdsad
-<%--
+
 <%@include file="include/navbar.jsp" %>
 <c:if test="${!empty errors}">
-    <p>
+    <p>Аа
     <div class="col-xs-10 col-xs-offset-1">
         <c:forEach items="${errors}" var="error">
             <div class="alert alert-danger fade in">
@@ -47,8 +46,7 @@ asdsad
     </div>
     </p>
 </c:if>
-
-
+<%--
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2 main">
@@ -92,7 +90,7 @@ asdsad
         </div>
     </div>
 </div>
-
+--%>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -108,6 +106,6 @@ asdsad
         btn.button
     };
 </script>
---%>
+
 </body>
 </html>

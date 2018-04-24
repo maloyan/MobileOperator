@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="20" ignored="0" total="20" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="741" started-at="2018-04-20T14:40:32Z" finished-at="2018-04-20T14:40:33Z">
+  <suite name="Command line suite" duration-ms="440" started-at="2018-04-21T11:05:47Z" finished-at="2018-04-21T11:05:48Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="741" started-at="2018-04-20T14:40:32Z" finished-at="2018-04-20T14:40:33Z">
+    <test name="Command line test" duration-ms="440" started-at="2018-04-21T11:05:47Z" finished-at="2018-04-21T11:05:48Z">
       <class name="org.badcoding.dao.implementation.EventDAOImplTest">
-        <test-method status="FAIL" signature="testAddEvent()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testAddEvent" duration-ms="1" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testAddEvent()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testAddEvent" duration-ms="1" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -51,7 +51,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddEvent -->
-        <test-method status="FAIL" signature="testListEventByDate()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testListEventByDate" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testListEventByDate()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testListEventByDate" duration-ms="1" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -95,7 +95,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testListEventByDate -->
-        <test-method status="FAIL" signature="testGetEventById()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testGetEventById" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testGetEventById()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testGetEventById" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -139,7 +139,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetEventById -->
-        <test-method status="FAIL" signature="testListEvents()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testListEvents" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testListEvents()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testListEvents" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -183,7 +183,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testListEvents -->
-        <test-method status="FAIL" signature="testUpdateEvent()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testUpdateEvent" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testUpdateEvent()[pri:0, instance:org.badcoding.dao.implementation.EventDAOImplTest@7a5d012c]" name="testUpdateEvent" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -229,51 +229,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
         </test-method> <!-- testUpdateEvent -->
       </class> <!-- org.badcoding.dao.implementation.EventDAOImplTest -->
       <class name="org.badcoding.dao.implementation.ContractDAOImplTest">
-        <test-method status="FAIL" signature="testGetContractById()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testGetContractById" duration-ms="1" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
-          <exception class="java.lang.NoClassDefFoundError">
-            <message>
-              <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
-at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
-at org.badcoding.dao.implementation.ContractDAOImplTest.testGetContractById(ContractDAOImplTest.java:52)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:69)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:181)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NoClassDefFoundError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetContractById -->
-        <test-method status="FAIL" signature="testAddContract()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testAddContract" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testAddContract()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testAddContract" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -317,7 +273,51 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddContract -->
-        <test-method status="FAIL" signature="testListContracts()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testListContracts" duration-ms="1" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testGetContractById()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testGetContractById" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+at org.badcoding.dao.implementation.ContractDAOImpl.getContractById(ContractDAOImpl.java:65)
+at org.badcoding.dao.implementation.ContractDAOImplTest.testGetContractById(ContractDAOImplTest.java:52)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:69)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:181)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetContractById -->
+        <test-method status="FAIL" signature="testListContracts()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testListContracts" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -361,7 +361,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testListContracts -->
-        <test-method status="FAIL" signature="testListContractsOfCustomer()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testListContractsOfCustomer" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testListContractsOfCustomer()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testListContractsOfCustomer" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -405,7 +405,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testListContractsOfCustomer -->
-        <test-method status="FAIL" signature="testRemoveContract()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testRemoveContract" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testRemoveContract()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testRemoveContract" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -449,7 +449,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRemoveContract -->
-        <test-method status="FAIL" signature="testUpdateContract()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testUpdateContract" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testUpdateContract()[pri:0, instance:org.badcoding.dao.implementation.ContractDAOImplTest@6b2fad11]" name="testUpdateContract" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -495,7 +495,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
         </test-method> <!-- testUpdateContract -->
       </class> <!-- org.badcoding.dao.implementation.ContractDAOImplTest -->
       <class name="org.badcoding.dao.implementation.CustomerDAOImplTest">
-        <test-method status="FAIL" signature="testAddCustomer()[pri:0, instance:org.badcoding.dao.implementation.CustomerDAOImplTest@3fb6a447]" name="testAddCustomer" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testAddCustomer()[pri:0, instance:org.badcoding.dao.implementation.CustomerDAOImplTest@3fb6a447]" name="testAddCustomer" duration-ms="1" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -539,7 +539,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddCustomer -->
-        <test-method status="FAIL" signature="testGetCustomerById()[pri:0, instance:org.badcoding.dao.implementation.CustomerDAOImplTest@3fb6a447]" name="testGetCustomerById" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testGetCustomerById()[pri:0, instance:org.badcoding.dao.implementation.CustomerDAOImplTest@3fb6a447]" name="testGetCustomerById" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -583,7 +583,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetCustomerById -->
-        <test-method status="FAIL" signature="testUpdateCustomer()[pri:0, instance:org.badcoding.dao.implementation.CustomerDAOImplTest@3fb6a447]" name="testUpdateCustomer" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testUpdateCustomer()[pri:0, instance:org.badcoding.dao.implementation.CustomerDAOImplTest@3fb6a447]" name="testUpdateCustomer" duration-ms="1" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -629,7 +629,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
         </test-method> <!-- testUpdateCustomer -->
       </class> <!-- org.badcoding.dao.implementation.CustomerDAOImplTest -->
       <class name="org.badcoding.dao.implementation.TariffDAOImplTest">
-        <test-method status="FAIL" signature="removeTariff()[pri:0, instance:org.badcoding.dao.implementation.TariffDAOImplTest@79b4d0f]" name="removeTariff" duration-ms="18" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="removeTariff()[pri:0, instance:org.badcoding.dao.implementation.TariffDAOImplTest@79b4d0f]" name="removeTariff" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -673,7 +673,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeTariff -->
-        <test-method status="FAIL" signature="testAddTariff()[pri:0, instance:org.badcoding.dao.implementation.TariffDAOImplTest@79b4d0f]" name="testAddTariff" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testAddTariff()[pri:0, instance:org.badcoding.dao.implementation.TariffDAOImplTest@79b4d0f]" name="testAddTariff" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -719,7 +719,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
         </test-method> <!-- testAddTariff -->
       </class> <!-- org.badcoding.dao.implementation.TariffDAOImplTest -->
       <class name="org.badcoding.dao.implementation.ServiceDAOImplTest">
-        <test-method status="FAIL" signature="testAddService()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testAddService" duration-ms="678" started-at="2018-04-20T14:40:32Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testAddService()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testAddService" duration-ms="409" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.ExceptionInInitializerError">
             <full-stacktrace>
               <![CDATA[java.lang.ExceptionInInitializerError
@@ -799,51 +799,7 @@ at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeCo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddService -->
-        <test-method status="FAIL" signature="testGetServiceById()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testGetServiceById" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
-          <exception class="java.lang.NoClassDefFoundError">
-            <message>
-              <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
-at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
-at org.badcoding.dao.implementation.ServiceDAOImplTest.testGetServiceById(ServiceDAOImplTest.java:32)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:69)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:181)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NoClassDefFoundError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetServiceById -->
-        <test-method status="FAIL" signature="testListServices()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testListServices" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testListServices()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testListServices" duration-ms="1" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
@@ -887,7 +843,51 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testListServices -->
-        <test-method status="FAIL" signature="testUpdateService()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testUpdateService" duration-ms="0" started-at="2018-04-20T14:40:33Z" finished-at="2018-04-20T14:40:33Z">
+        <test-method status="FAIL" signature="testGetServiceById()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testGetServiceById" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: Could not initialize class org.badcoding.hibernate.logic.Database
+at org.badcoding.dao.implementation.ServiceDAOImpl.getServiceById(ServiceDAOImpl.java:64)
+at org.badcoding.dao.implementation.ServiceDAOImplTest.testGetServiceById(ServiceDAOImplTest.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:69)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:181)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetServiceById -->
+        <test-method status="FAIL" signature="testUpdateService()[pri:0, instance:org.badcoding.dao.implementation.ServiceDAOImplTest@3cda1055]" name="testUpdateService" duration-ms="0" started-at="2018-04-21T11:05:48Z" finished-at="2018-04-21T11:05:48Z">
           <exception class="java.lang.NoClassDefFoundError">
             <message>
               <![CDATA[Could not initialize class org.badcoding.hibernate.logic.Database]]>
