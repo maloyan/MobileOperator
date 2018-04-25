@@ -17,6 +17,14 @@ import org.springframework.validation.BindingResult;
 
 @Controller
 public class IndexController {
+    @Autowired
+    UserDAO user;
+
+    @Value("${application.admin}")
+    private Integer admin;
+
+    @Value("${application.admin.password}")
+    private String admin_password;
 
     @RequestMapping("/")
     public String root(Map<String, Object> model) {
@@ -37,4 +45,48 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/login")
+    public String login(@RequestParam(value="info", required=false) List<Integer> info, Map<String, Object> model) {
+        model.put("loginForm", new LoginForm());
+        if (info != null)
+            model.put("info", info);
+        return "login";
+    }
+
+    @RequestMapping(value = "/process_login", method = RequestMethod.POST)
+    public String process_login(HttpServletRequest request, @ModelAttribute("loginForm") LoginForm loginForm, Map<String, Object> model, BindingResult result) {
+        List<Integer> errors = new ArrayList<Integer>();
+        try {
+            Integer id = loginForm.getId();
+            String password = loginForm.getPassword();
+
+            if (id.equals(admin)) {
+                if (!password.equals(admin_password)) {
+                    errors.add(32);
+                    throw new Exception();
+                }
+                HttpSession session = request.getSession();
+                session.setAttribute("is_admin", true);
+                return "redirect:/admin/";
+            }
+
+            User user_a = user.getUserById(id);
+            if (user_a == null) {
+                errors.add(31);
+                throw new Exception();
+            }
+
+            if (!user_a.checkPassword(password)) {
+                errors.add(32);
+                throw new Exception();
+            }
+
+            return "redirect:/user/";
+        } catch (Exception e) {
+
+            model.put("loginForm", loginForm);
+            model.put("login_errors", errors);
+            return "redirect:/login";
+        }
+    }
 }

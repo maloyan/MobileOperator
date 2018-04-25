@@ -62,4 +62,11 @@ public class User {
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
+
+    public boolean checkPassword(String candidate) {
+        if (candidate == password)
+            return true;
+        else
+            return false;
+    }
 }
