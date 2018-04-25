@@ -64,7 +64,7 @@ public class User {
     }
 
     public boolean checkPassword(String candidate) {
-        if (candidate == password)
+        if (candidate.equals(password))
             return true;
         else
             return false;

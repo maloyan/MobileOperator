@@ -2,6 +2,7 @@ package org.badcoding.hibernate.logic;
 
 import org.badcoding.dao.interfaces.*;
 import org.badcoding.dao.implementation.*;
+import org.w3c.dom.UserDataHandler;
 
 public class Factory {
 	private static CustomerDAO customer = null;
@@ -9,6 +10,7 @@ public class Factory {
 	private static ServiceDAO service = null;
 	private static EventDAO event = null;
 	private static TariffDAO tariff = null;
+    private static UserDAO user = null;
 
 	private static Factory instance = null;
 
@@ -54,5 +56,11 @@ public class Factory {
         return tariff;
     }
 
+    public UserDAO getUserDAO() {
+        if (user == null) {
+            user = new UserDAOImpl();
+        }
+        return user;
+    }
 }
 

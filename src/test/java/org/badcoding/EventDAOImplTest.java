@@ -1,8 +1,8 @@
-package org.badcoding.test;
+package org.badcoding;
 
 import org.badcoding.hibernate.logic.Factory;
 import org.badcoding.hibernate.stored.*;
-import org.testng.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
 import java.util.Date;

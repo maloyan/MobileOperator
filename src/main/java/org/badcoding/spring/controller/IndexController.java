@@ -71,6 +71,7 @@ public class IndexController {
             }
 
             User user_a = user.getUserById(id);
+
             if (user_a == null) {
                 errors.add(31);
                 throw new Exception();
@@ -83,10 +84,9 @@ public class IndexController {
 
             return "redirect:/user/";
         } catch (Exception e) {
-
             model.put("loginForm", loginForm);
             model.put("login_errors", errors);
-            return "redirect:/login";
+            return "login";
         }
     }
 }
