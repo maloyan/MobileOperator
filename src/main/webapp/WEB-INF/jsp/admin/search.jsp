@@ -120,7 +120,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 main">
-                        <form:form method="get" id="users_form" commandName="usersForm" action="/admin/users_search"  role="form">
+                        <form:form method="get" id="users_form" commandName="usersForm" action="/admin/search"  role="form">
                             <spring:message code="label.admin.01" var="msg1" />
                             <spring:message code="label.admin.18" var="msg2" />
                             <spring:message code="label.admin.19" var="msg3" />
@@ -184,12 +184,6 @@
                             <div class="col-md-6">
                                 <p>
                                     <b><spring:message code="label.admin.28" />:</b> ${ result.email }
-                                </p>
-                                <p>
-                                    <b><spring:message code="label.admin.29" />:</b> <%= (((Users)(pageContext.findAttribute("result"))).getLast_login() == null ? "never" : new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(((Users)(pageContext.findAttribute("result"))).getLast_login())) %>
-                                <p>
-                                    <b><spring:message code="label.admin.30" />:</b> <%= new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(((Users)(pageContext.findAttribute("result"))).getDate_registered()) %>
-                                </p>
                                 </p>
                             </div>
                             <div class="col-md-1 no-rights" align="right">
