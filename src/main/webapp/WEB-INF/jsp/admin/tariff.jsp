@@ -28,7 +28,7 @@
 
 <body>
 <%@include file="../include/navbar.jsp" %>
-юзер инфо
+тарифы
 <%@include file="../include/errors.jsp" %>
 </body>
 </html>

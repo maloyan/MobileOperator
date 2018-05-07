@@ -1,18 +1,25 @@
 package org.badcoding.spring.controller;
 
-import org.badcoding.spring.form.UsersEditForm;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import java.util.*;
+import java.util.regex.*;
+import java.text.*;
+import javax.servlet.http.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.*;
+import org.badcoding.dao.interfaces.*;
+import org.badcoding.hibernate.stored.*;
+import org.badcoding.spring.form.*;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+    private Boolean is_admin(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        return (session.getAttribute("is_admin") != null);
+    }
+
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -21,7 +28,14 @@ public class AdminController {
 	}
 
     @RequestMapping("/search")
-    public String search() {
+    public String search(HttpServletRequest request, Map<String, Object> model) {
+		List<Integer> errors = new ArrayList<Integer>();
+		if (!is_admin(request)) {
+			errors.add(45);
+			model.put("e", errors);
+			return "redirect:/index";
+		}
+		model.put("usersForm", new UsersForm());
 	    return "/admin/search";
     }
 

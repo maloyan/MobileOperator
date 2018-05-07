@@ -54,13 +54,13 @@
                     <spring:message code="label.admin.14" var="msg14" />
                     <spring:message code="label.admin.15" var="msg15" />
                     <p><input id="id" name="id" type="text" class="form-control" placeholder="${ msg1 }" /></p>
-                    <p><input id="email" name="email" type="text" class="form-control" placeholder="${ msg24 }" /></p>
-                    <p><input id="name"  name="name" type="text" class="form-control" placeholder="${ msg4 }" /></p>
-                    <p><input id="last_name"  name="last_name" type="text" class="form-control" placeholder="${ msg5 }" /></p>
-                    <p><input id="patronymic" name="patronymic" type="text" class="form-control" placeholder="${ msg6 }" /></p>
-                    <p><input id="registered" name="registered" type="text" class="form-control" placeholder="${ msg30 }" /></p>
-                    <p><input id="last_login" name="last_login" type="text" class="form-control" placeholder="${ msg29 }" /></p>
-                    <p><input id="password" name="password" type="password" class="form-control" placeholder="${ msg2 }" /></p>
+                    <p><input id="first_name" name="email" type="text" class="form-control" placeholder="${ msg24 }" /></p>
+                    <p><input id="last_name"  name="name" type="text" class="form-control" placeholder="${ msg4 }" /></p>
+                    <p><input id="company"  name="last_name" type="text" class="form-control" placeholder="${ msg5 }" /></p>
+                    <p><input id="email" name="patronymic" type="text" class="form-control" placeholder="${ msg6 }" /></p>
+                    <p><input id="address" name="registered" type="text" class="form-control" placeholder="${ msg30 }" /></p>
+                    <p><input id="personal_or_commercial" name="last_login" type="text" class="form-control" placeholder="${ msg29 }" /></p>
+                    <p><input id="number" name="password" type="password" class="form-control" placeholder="${ msg2 }" /></p>
                 </form>
             </div>
             <div class="modal-footer">
@@ -77,7 +77,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="<c:url value="/admin/search" />"><spring:message code="title.users" /></a></li>
-                <li><a href="<c:url value="/admin/tariff" />"><spring:message code="title.flights" /></a></li>
+                <li><a href="<c:url value="/admin/tariff" />"><spring:message code="title.tariff" /></a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="<c:url value="/admin/logout" />"><spring:message code="label.user.12" /></a></li>
@@ -142,21 +142,21 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="patronymic" path="patronymic" type="text" class="form-control" placeholder="${ msg4 }" /></p>
+                                    <p><form:input id="company" path="company" type="text" class="form-control" placeholder="${ msg4 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="flight" path="flight" type="text" class="form-control" placeholder="${ msg5 }" /></p>
+                                    <p><form:input id="email" path="email" type="text" class="form-control" placeholder="${ msg5 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="company" path="company" type="text" class="form-control" placeholder="${ msg6 }" /></p>
+                                    <p><form:input id="address" path="address" type="text" class="form-control" placeholder="${ msg6 }" /></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="paid" path="paid" type="text" class="form-control" placeholder="${ msg7 }" /></p>
+                                    <p><form:input id="personal_or_commercial" path="personal_or_commercial" type="text" class="form-control" placeholder="${ msg7 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="email" path="email" type="text" class="form-control" placeholder="${ msg8 }" /></p>
+                                    <p><form:input id="number" path="number" type="text" class="form-control" placeholder="${ msg8 }" /></p>
                                 </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
@@ -179,7 +179,7 @@
                                 </p>
                                 <p>
                                     <b><spring:message code="label.admin.27" />:</b> ${ result.patronymic }
-                                </p>
+                                </p>св
                             </div>
                             <div class="col-md-6">
                                 <p>
