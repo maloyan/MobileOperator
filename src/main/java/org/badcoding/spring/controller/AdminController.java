@@ -15,20 +15,22 @@ import org.badcoding.spring.form.*;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-    private Boolean is_admin(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        return (session.getAttribute("is_admin") != null);
-    }
 
-	@RequestMapping("/logout")
-	public String logout(HttpServletRequest request) {
+    @Autowired
+    CustomerDAO customerDAO;
+
+	private Boolean is_admin(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		session.setAttribute("is_admin", null);
-        return "redirect:/index";
+		return (session.getAttribute("is_admin") != null);
 	}
 
-    @RequestMapping("/search")
-    public String search(HttpServletRequest request, Map<String, Object> model) {
+	@RequestMapping("/")
+    public String root() {
+	    return "redirect:/admin/users";
+    }
+
+	@RequestMapping("/users")
+	public String users(HttpServletRequest request, Map<String, Object> model) {
 		List<Integer> errors = new ArrayList<Integer>();
 		if (!is_admin(request)) {
 			errors.add(45);
@@ -36,34 +38,220 @@ public class AdminController {
 			return "redirect:/index";
 		}
 		model.put("usersForm", new UsersForm());
-	    return "/admin/search";
-    }
-
-    @RequestMapping("/tariff")
-    public String tariff() {
-        return "/admin/tariff";
-    }
-
-	@RequestMapping("/")
-	public String root() {
-		return "redirect:/admin/search";
+		return "/admin/users";
 	}
 
-	@RequestMapping(value = "/edit_user", method = RequestMethod.POST)
-	public @ResponseBody
-	List<Integer> edit_user(HttpServletRequest request, UsersEditForm usersEditForm) {
-		return null;
+	@RequestMapping(value = "/users_search", method = RequestMethod.GET)
+	public String users_search(@ModelAttribute UsersForm usersForm, HttpServletRequest request, Map<String, Object> model) {
+		List<Integer> errors = new ArrayList<Integer>();
+		List<Customer> result = new ArrayList<Customer>();
+		if (!is_admin(request)) {
+			errors.add(45);
+			model.put("e", errors);
+			return "redirect:/index";
+		}
+		try {
+			Integer id_s = usersForm.getId();
+			String first_name = usersForm.getFirst_name();
+			String last_name = usersForm.getLast_name();
+			String company_s = usersForm.getCompany();
+			String address = usersForm.getAddress();
+			String email = usersForm.getEmail();
+			String personal_or_comm = usersForm.getPersonal_or_commercial();
+			String passport = usersForm.getPassport();
+
+			if (!id_s.equals("") && (!first_name.equals("") || !last_name.equals("") || !company_s.equals("") || !address.equals("") || !email.equals("") || !personal_or_comm.equals("") || !passport.equals(""))) {
+				errors.add(46);
+				throw new Exception();
+			}
+			/*
+			if (id_s == "")
+				id_s = -1;
+
+			if (flight_s == "")
+				flight_s = "-1";
+			if (company_s == "")
+				company_s = "-1";
+			if (paid_s == "")
+				paid_s = "-1";
+            */
+
+			if (id_s != -1) {
+				Customer t = customerDAO.getCustomerById(id_s   );
+				if (t != null)
+					result.add(t);
+			} /*else {
+				result = users.getByFilters(first_name, last_name, patronymic, flight, company, paid, email);
+			}*/
+			if (result.size() == 0) {
+				errors.add(48);
+				model.put("info", errors);
+			} else {
+				model.put("results", result);
+			}
+
+		} catch (Exception e) {
+			model.put("errors", errors);
+		}
+		model.put("usersForm", usersForm);
+		return "/admin/users";
 	}
 
-	@RequestMapping(value = "/remove_user", method = RequestMethod.POST)
-	public @ResponseBody
-	List<Integer> remove_user(HttpServletRequest request, Integer user_id) {
-		return null;
+	@RequestMapping(value="/add_user", method=RequestMethod.POST)
+	public @ResponseBody List<Integer> add_user(HttpServletRequest request, UsersForm usersForm) {
+		List<Integer> errors = new ArrayList<Integer>();
+		try {
+			if (!is_admin(request)) {
+				errors.add(45);
+				throw new Exception();
+			}
+
+            Integer id_s = usersForm.getId();
+            String first_name = usersForm.getFirst_name();
+            String last_name = usersForm.getLast_name();
+            String company_s = usersForm.getCompany();
+            String address = usersForm.getAddress();
+            String email = usersForm.getEmail();
+            String personal_or_comm = usersForm.getPersonal_or_commercial();
+            String passport = usersForm.getPassport();
+
+            /*
+			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+            if (!email_regex.matcher(email).matches())
+                errors.add(24);
+
+			if (password.length() < 8)
+				errors.add(21);
+			if (name.length() < 4)
+				errors.add(22);
+			if (last_name.length() < 4)
+				errors.add(23);
+
+			if (users.getByEmail(email).size() != 0)
+				errors.add(25);
+            */
+            Customer customer = new Customer();
+            customer.setCustomerId(id_s);
+            customer.setFirstName(first_name);
+            customer.setLastName(last_name);
+            customer.setCompany(company_s);
+            customer.setAddress(address);
+            customer.setEmail(email);
+            customer.setCommersialOrPersonal(personal_or_comm);
+            customer.setPassport(passport);
+            customerDAO.addCustomer(customer);
+
+
+		} catch (Exception e) {
+			if (errors.size() == 0)
+				errors.add(43);
+		}
+		return errors;
 	}
 
-	@RequestMapping(value = "/add_user", method = RequestMethod.POST)
-	public @ResponseBody
-	List<Integer> add_user(HttpServletRequest request, UsersEditForm usersEditForm) {
-		return null;
+	@RequestMapping(value="/get_user", method=RequestMethod.GET)
+	public @ResponseBody List<List<String>> get_user(HttpServletRequest request, @RequestParam int user_id) {
+		List<String> errors = new ArrayList<String>();
+		List<List<String>> result = new ArrayList<List<String>>();
+		try {
+			if (!is_admin(request)) {
+				errors.add("45");
+				throw new Exception();
+			}
+			Customer customer = customerDAO.getCustomerById(user_id);
+			if (customer == null) {
+				errors.add("48");
+				throw new Exception();
+			}
+
+			List<String> t = new ArrayList<String>();
+
+			t.add(Integer.toString(customer.getCustomerId()));
+			t.add(customer.getFirstName());
+			t.add(customer.getLastName());
+			t.add(customer.getEmail());
+			result.add(t);
+			result.add(errors);
+		} catch (Exception e) {
+			if (errors.size() == 0)
+				errors.add("43");
+			result.add(errors);
+		}
+		return result;
 	}
+/*
+	@RequestMapping(value="/remove_user", method=RequestMethod.POST)
+	public @ResponseBody List<Integer> remove_user(HttpServletRequest request, Integer user_id) {
+		List<Integer> errors = new ArrayList<Integer>();
+		try {
+			if (!is_admin(request)) {
+				errors.add(45);
+				throw new Exception();
+			}
+			Users c = users.getById(user_id);
+			if (c == null) {
+				errors.add(50);
+				throw new Exception();
+			}
+			users.delete(c);
+		} catch (Exception e) {
+			if (errors.size() == 0)
+				errors.add(43);
+		}
+		return errors;
+	}
+
+	@RequestMapping(value="/edit_user", method=RequestMethod.POST)
+	public @ResponseBody List<Integer> edit_user(HttpServletRequest request, UsersEditForm usersEditForm) {
+		List<Integer> errors = new ArrayList<Integer>();
+		try {
+			if (!is_admin(request)) {
+				errors.add(45);
+				throw new Exception();
+			}
+			String id_s = usersEditForm.getId();
+			String email = usersEditForm.getEmail();
+			String name = usersEditForm.getName();
+			String last_name = usersEditForm.getLast_name();
+			String patronymic = usersEditForm.getPatronymic();
+
+			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+
+			if (name.length() < 4)
+				errors.add(22);
+			if (last_name.length() < 4)
+				errors.add(23);
+			if (!email_regex.matcher(email).matches())
+				errors.add(24);
+
+			Integer id = null;
+			try {
+				id = Integer.parseInt(id_s);
+			} catch (Exception e) {
+				errors.add(47);
+			}
+			if (errors.size() != 0)
+				throw new Exception();
+
+			if (email != users.getById(id).getEmail() && users.getByEmail(email).size() != 0)
+				errors.add(25);
+
+			Users user = users.getById(id);
+			if (user == null) {
+				errors.add(52);
+				throw new Exception();
+			}
+
+			user.setEmail(email);
+			user.setName(name);
+			user.setLast_name(last_name);
+			user.setPatronymic(patronymic);
+			users.update(user);
+		} catch (Exception e) {
+			if (errors.size() == 0)
+				errors.add(43);
+		}
+		return errors;
+	}*/
 }
+

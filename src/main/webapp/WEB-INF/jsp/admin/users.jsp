@@ -29,7 +29,7 @@
 <body>
 <%@include file="../include/navbar.jsp" %>
 
-<!-- user detail modal -->
+<!-- Форма добавления пользователя -->
 <div id="user_edit_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div id="info-modal-div" class="modal-content" align="center">
@@ -42,31 +42,20 @@
             </div>
             <div id="user_edit_body" class="modal-body">
                 <form role="form" id="user_form">
-                    <spring:message code="label.admin.01" var="msg1" />
-                    <spring:message code="label.admin.24" var="msg24" />
-                    <spring:message code="label.login.4" var="msg4" />
-                    <spring:message code="label.login.5" var="msg5" />
-                    <spring:message code="label.login.6" var="msg6" />
-                    <spring:message code="label.login.2" var="msg2" />
-                    <spring:message code="label.admin.29" var="msg29" />
-                    <spring:message code="label.admin.30" var="msg30" />
-                    <spring:message code="label.admin.13" var="msg13" />
-                    <spring:message code="label.admin.14" var="msg14" />
-                    <spring:message code="label.admin.15" var="msg15" />
-                    <p><input id="id" name="id" type="text" class="form-control" placeholder="${ msg1 }" /></p>
-                    <p><input id="first_name" name="email" type="text" class="form-control" placeholder="${ msg24 }" /></p>
-                    <p><input id="last_name"  name="name" type="text" class="form-control" placeholder="${ msg4 }" /></p>
-                    <p><input id="company"  name="last_name" type="text" class="form-control" placeholder="${ msg5 }" /></p>
-                    <p><input id="email" name="patronymic" type="text" class="form-control" placeholder="${ msg6 }" /></p>
-                    <p><input id="address" name="registered" type="text" class="form-control" placeholder="${ msg30 }" /></p>
-                    <p><input id="personal_or_commercial" name="last_login" type="text" class="form-control" placeholder="${ msg29 }" /></p>
-                    <p><input id="number" name="password" type="password" class="form-control" placeholder="${ msg2 }" /></p>
+                    <p><input id="id" name="id" type="text" class="form-control" placeholder="ID" /></p>
+                    <p><input id="first_name" name="first_name" type="text" class="form-control" placeholder="Имя" /></p>
+                    <p><input id="last_name"  name="last_name" type="text" class="form-control" placeholder="Фамилия" /></p>
+                    <p><input id="company"  name="company" type="text" class="form-control" placeholder="Компания(если есть)" /></p>
+                    <p><input id="email" name="email" type="text" class="form-control" placeholder="email" /></p>
+                    <p><input id="address" name="address" type="text" class="form-control" placeholder="адрес" /></p>
+                    <p><input id="personal_or_commercial" name="personal_or_commercial" type="text" class="form-control" placeholder="физическое лицо или юридическое" /></p>
+                    <p><input id="passport" name="passport" type="password" class="form-control" placeholder="паспорт" /></p>
                 </form>
             </div>
             <div class="modal-footer">
-                <button id="modal_add_btn" type="button" class="btn btn-primary">${ msg14 }</button>
-                <button id="modal_edit_btn" type="button" class="btn btn-primary">${ msg13 }</button>
-                <button id="modal_remove_btn" type="button" class="btn btn-danger">${ msg15 }</button>
+                <button id="modal_add_btn" type="button" class="btn btn-primary"> Добавить </button>
+                <button id="modal_edit_btn" type="button" class="btn btn-primary"> Сохранить </button>
+                <button id="modal_remove_btn" type="button" class="btn btn-danger"> Удалить </button>
             </div>
         </div>
     </div>
@@ -120,7 +109,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 main">
-                        <form:form method="get" id="users_form" commandName="usersForm" action="/admin/search"  role="form">
+                        <form:form method="get" id="users_form" commandName="usersForm" action="/admin/users_search"  role="form">
                             <spring:message code="label.admin.01" var="msg1" />
                             <spring:message code="label.admin.18" var="msg2" />
                             <spring:message code="label.admin.19" var="msg3" />
@@ -156,7 +145,7 @@
                                     <p><form:input id="personal_or_commercial" path="personal_or_commercial" type="text" class="form-control" placeholder="${ msg7 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="number" path="number" type="text" class="form-control" placeholder="${ msg8 }" /></p>
+                                    <p><form:input id="passport" path="passport" type="text" class="form-control" placeholder="${ msg8 }" /></p>
                                 </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
@@ -172,14 +161,11 @@
                         <div class="row highlight">
                             <div class="col-md-5">
                                 <p>
-                                    <b><spring:message code="label.admin.25" />:</b> ${ result.name }
+                                    <b><spring:message code="label.admin.25" />:</b> ${ result.firstName }
                                 </p>
                                 <p>
-                                    <b><spring:message code="label.admin.26" />:</b> ${ result.last_name }
+                                    <b><spring:message code="label.admin.26" />:</b> ${ result.lastName }
                                 </p>
-                                <p>
-                                    <b><spring:message code="label.admin.27" />:</b> ${ result.patronymic }
-                                </p>св
                             </div>
                             <div class="col-md-6">
                                 <p>
@@ -188,17 +174,17 @@
                             </div>
                             <div class="col-md-1 no-rights" align="right">
                                 <p>
-                                    <button id="rm-${ result.user_id }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> rm-last</c:if>">
+                                    <button id="rm-${ result.customerId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> rm-last</c:if>">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </button>
                                 </p>
                                 <p>
-                                    <button id="edit-${ result.user_id }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> edit-last</c:if>">
+                                    <button id="edit-${ result.customerId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> edit-last</c:if>">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </p>
                                 <p>
-                                    <b><spring:message code="label.admin.01" />:</b> ${ result.user_id }
+                                    <b><spring:message code="label.admin.01" />:</b> ${ result.customerId }
                                 </p>
                             </div>
                         </div>
@@ -229,10 +215,12 @@
         $('#errors_p').remove()
     })
 </script>
+
+<!-- Всплывающее окно для add -->
 <script>
     var btn = $("#user_add_btn")[0]
     btn.onclick = function() {
-        $('#id').hide()
+        $('#id').show()
         $('#modal_add_btn').show()
         $('#registered').hide()
         $('#last_login').hide()
