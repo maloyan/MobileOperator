@@ -49,7 +49,7 @@
                     <p><input id="email" name="email" type="text" class="form-control" placeholder="email" /></p>
                     <p><input id="address" name="address" type="text" class="form-control" placeholder="адрес" /></p>
                     <p><input id="personal_or_commercial" name="personal_or_commercial" type="text" class="form-control" placeholder="физическое лицо или юридическое" /></p>
-                    <p><input id="passport" name="passport" type="password" class="form-control" placeholder="паспорт" /></p>
+                    <p><input id="passport" name="passport" type="text" class="form-control" placeholder="паспорт" /></p>
                 </form>
             </div>
             <div class="modal-footer">
@@ -391,12 +391,13 @@
             } else {
                 var result = data[0]
                 $('#id').val(result[0])
-                $('#name').val(result[1])
+                $('#first_name').val(result[1])
                 $('#last_name').val(result[2])
-                $('#patronymic').val(result[3])
+                $('#company').val(result[3])
                 $('#email').val(result[4])
-                $('#last_login').val(result[5])
-                $('#registered').val(result[6])
+                $('#address').val(result[5])
+                $('#personal_or_commercial').val(result[6])
+                $('#passport').val(result[7])
                 $(button).show()
             }
         });

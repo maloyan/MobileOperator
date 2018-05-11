@@ -1,35 +1,34 @@
 package org.badcoding.spring.controller;
 
-import java.util.*;
-import java.util.regex.*;
-import java.text.*;
-import javax.servlet.http.*;
-
+import org.badcoding.dao.interfaces.CustomerDAO;
+import org.badcoding.dao.interfaces.TariffDAO;
+import org.badcoding.hibernate.stored.Customer;
+import org.badcoding.hibernate.stored.Tariff;
+import org.badcoding.spring.form.TariffForm;
+import org.badcoding.spring.form.UsersForm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.*;
-import org.badcoding.dao.interfaces.*;
-import org.badcoding.hibernate.stored.*;
-import org.badcoding.spring.form.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminController {
+public class TariffController {
 
     @Autowired
-    CustomerDAO customerDAO;
+	TariffDAO tariffDAO;
 
 	private Boolean is_admin(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		return (session.getAttribute("is_admin") != null);
 	}
 
-	@RequestMapping("/")
-    public String root() {
-	    return "redirect:/admin/users";
-    }
-
-	@RequestMapping("/users")
+	@RequestMapping("/tariff")
 	public String users(HttpServletRequest request, Map<String, Object> model) {
 		List<Integer> errors = new ArrayList<Integer>();
 		if (!is_admin(request)) {
@@ -37,31 +36,31 @@ public class AdminController {
 			model.put("e", errors);
 			return "redirect:/index";
 		}
-		model.put("usersForm", new UsersForm());
-		return "/admin/users";
+		model.put("tariffForm", new TariffForm());
+		return "/admin/tariff";
 	}
 
-	@RequestMapping(value = "/users_search", method = RequestMethod.GET)
-	public String users_search(@ModelAttribute UsersForm usersForm, HttpServletRequest request, Map<String, Object> model) {
+	@RequestMapping(value = "/tariff_search", method = RequestMethod.GET)
+	public String users_search(@ModelAttribute TariffForm tariffForm, HttpServletRequest request, Map<String, Object> model) {
 		List<Integer> errors = new ArrayList<Integer>();
-		List<Customer> result = new ArrayList<Customer>();
+		List<Tariff> result = new ArrayList<Tariff>();
 		if (!is_admin(request)) {
 			errors.add(45);
 			model.put("e", errors);
 			return "redirect:/index";
 		}
 		try {
-			Integer id_s = usersForm.getId();
-			String first_name = usersForm.getFirst_name();
-			String last_name = usersForm.getLast_name();
-			String company_s = usersForm.getCompany();
-			String address = usersForm.getAddress();
-			String email = usersForm.getEmail();
-			String personal_or_comm = usersForm.getPersonal_or_commercial();
-			String passport = usersForm.getPassport();
+			Integer tariffId = tariffForm.getTariffId();
+			String name = tariffForm.getName();
+			Integer intMb = tariffForm.getIntMb();
+			Integer intDay;
+			Integer callDayPerMinute;
+			Integer callNightPerMinute;
+			Integer callPerDay;
+			Integer sms;
 
-            if (id_s == null)
-                id_s = -1;
+            if (tariffId == null)
+                tariffId = -1;
             /*
 			if (!id_s.equals("") && (!first_name.equals("") || !last_name.equals("") || !company_s.equals("") || !address.equals("") || !email.equals("") || !personal_or_comm.equals("") || !passport.equals(""))) {
 				errors.add(46);
@@ -77,7 +76,7 @@ public class AdminController {
 				paid_s = "-1";
             */
 
-			if (id_s != -1) {
+			if (tariffId != -1) {
 				Customer t = customerDAO.getCustomerById(id_s);
 				if (t != null)
 					result.add(t);
