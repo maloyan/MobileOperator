@@ -29,7 +29,7 @@ public class TariffController {
 	}
 
 	@RequestMapping("/tariff")
-	public String users(HttpServletRequest request, Map<String, Object> model) {
+	public String tariff(HttpServletRequest request, Map<String, Object> model) {
 		List<Integer> errors = new ArrayList<Integer>();
 		if (!is_admin(request)) {
 			errors.add(45);
@@ -41,7 +41,7 @@ public class TariffController {
 	}
 
 	@RequestMapping(value = "/tariff_search", method = RequestMethod.GET)
-	public String users_search(@ModelAttribute TariffForm tariffForm, HttpServletRequest request, Map<String, Object> model) {
+	public String tariff_search(@ModelAttribute TariffForm tariffForm, HttpServletRequest request, Map<String, Object> model) {
 		List<Integer> errors = new ArrayList<Integer>();
 		List<Tariff> result = new ArrayList<Tariff>();
 		if (!is_admin(request)) {
@@ -74,8 +74,9 @@ public class TariffController {
 				company_s = "-1";
 			if (paid_s == "")
 				paid_s = "-1";
-*/
-			if (tariffId != -1) {
+			*/
+
+            if (tariffId != -1) {
 				Tariff t = tariffDAO.getTariffById(tariffId);
 				if (t != null)
 					result.add(t);
@@ -95,9 +96,9 @@ public class TariffController {
 		model.put("tariffForm", tariffForm);
 		return "/admin/tariff";
 	}
-/*
-	@RequestMapping(value="/add_user", method=RequestMethod.POST)
-	public @ResponseBody List<Integer> add_user(HttpServletRequest request, UsersForm usersForm) {
+
+	@RequestMapping(value="/add_tariff", method=RequestMethod.POST)
+	public @ResponseBody List<Integer> add_tariff(HttpServletRequest request, TariffForm tariffForm) {
 		List<Integer> errors = new ArrayList<Integer>();
 		try {
 			if (!is_admin(request)) {
@@ -105,16 +106,16 @@ public class TariffController {
 				throw new Exception();
 			}
 
-            Integer id_s = usersForm.getId();
-            String first_name = usersForm.getFirst_name();
-            String last_name = usersForm.getLast_name();
-            String company_s = usersForm.getCompany();
-            String address = usersForm.getAddress();
-            String email = usersForm.getEmail();
-            String personal_or_comm = usersForm.getPersonal_or_commercial();
-            String passport = usersForm.getPassport();
+            Integer tariffId = tariffForm.getTariffId();
+            String name = tariffForm.getName();
+            Integer intMb = tariffForm.getIntMb();
+            Integer intDay = tariffForm.getIntDay();
+            Integer callDayPerMinute = tariffForm.getCallDayPerMinute();
+            Integer callNightPerMinute = tariffForm.getCallNightPerMinute();
+            Integer callPerDay = tariffForm.getCallPerDay();
+            Integer sms = tariffForm.getSms();
 
-
+/*
 			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
             if (!email_regex.matcher(email).matches())
                 errors.add(24);
@@ -128,18 +129,17 @@ public class TariffController {
 
 			if (users.getByEmail(email).size() != 0)
 				errors.add(25);
-
-            Customer customer = new Customer();
-            customer.setCustomerId(id_s);
-            customer.setFirstName(first_name);
-            customer.setLastName(last_name);
-            customer.setCompany(company_s);
-            customer.setAddress(address);
-            customer.setEmail(email);
-            customer.setCommersialOrPersonal(personal_or_comm);
-            customer.setPassport(passport);
-            customerDAO.addCustomer(customer);
-
+*/
+            Tariff tariff = new Tariff();
+            tariff.setTariffId(tariffId);
+            tariff.setName(name);
+            tariff.setIntMb(intMb);
+            tariff.setIntDay(intDay);
+            tariff.setCallDayPerMinute(callDayPerMinute);
+            tariff.setCallNightPerMinute(callNightPerMinute);
+            tariff.setCallPerDay(callPerDay);
+            tariff.setSms(sms);
+            tariffDAO.addTariff(tariff);
 
 		} catch (Exception e) {
 			if (errors.size() == 0)
@@ -149,7 +149,7 @@ public class TariffController {
 	}
 
 	@RequestMapping(value="/get_tariff", method=RequestMethod.GET)
-	public @ResponseBody List<List<String>> get_user(HttpServletRequest request, @RequestParam int user_id) {
+	public @ResponseBody List<List<String>> get_tariff(HttpServletRequest request, @RequestParam int id) {
 		List<String> errors = new ArrayList<String>();
 		List<List<String>> result = new ArrayList<List<String>>();
 		try {
@@ -157,22 +157,22 @@ public class TariffController {
 				errors.add("45");
 				throw new Exception();
 			}
-			Customer customer = customerDAO.getCustomerById(user_id);
-			if (customer == null) {
+			Tariff tariff = tariffDAO.getTariffById(id);
+			if (tariff == null) {
 				errors.add("48");
 				throw new Exception();
 			}
 
 			List<String> t = new ArrayList<String>();
 
-			t.add(Integer.toString(customer.getCustomerId()));
-			t.add(customer.getFirstName());
-			t.add(customer.getLastName());
-			t.add(customer.getCompany());
-			t.add(customer.getEmail());
-			t.add(customer.getAddress());
-			t.add(customer.getCommersialOrPersonal());
-			t.add(customer.getPassport());
+			t.add(Integer.toString(tariff.getTariffId()));
+			t.add(tariff.getName());
+			t.add(Integer.toString(tariff.getIntMb()));
+			t.add(Integer.toString(tariff.getIntDay()));
+			t.add(Integer.toString(tariff.getCallDayPerMinute()));
+			t.add(Integer.toString(tariff.getCallNightPerMinute()));
+			t.add(Integer.toString(tariff.getCallPerDay()));
+			t.add(Integer.toString(tariff.getSms()));
 			result.add(t);
 			result.add(errors);
 		} catch (Exception e) {
@@ -183,20 +183,20 @@ public class TariffController {
 		return result;
 	}
 
-	@RequestMapping(value="/remove_user", method=RequestMethod.POST)
-	public @ResponseBody List<Integer> remove_user(HttpServletRequest request, Integer user_id) {
+	@RequestMapping(value="/remove_tariff", method=RequestMethod.POST)
+	public @ResponseBody List<Integer> remove_tariff(HttpServletRequest request, Integer id) {
 		List<Integer> errors = new ArrayList<Integer>();
 		try {
 			if (!is_admin(request)) {
 				errors.add(45);
 				throw new Exception();
 			}
-			Customer c = customerDAO.getCustomerById(user_id);
-			if (c == null) {
+			Tariff tariff = tariffDAO.getTariffById(id);
+			if (tariff == null) {
 				errors.add(50);
 				throw new Exception();
 			}
-			customerDAO.removeCustomer(c);
+			tariffDAO.removeTariff(tariff);
 		} catch (Exception e) {
 			if (errors.size() == 0)
 				errors.add(43);
@@ -204,8 +204,8 @@ public class TariffController {
 		return errors;
 	}
 
-	@RequestMapping(value="/edit_user", method=RequestMethod.POST)
-	public @ResponseBody List<Integer> edit_user(HttpServletRequest request, UsersForm usersForm) {
+	@RequestMapping(value="/edit_tariff", method=RequestMethod.POST)
+	public @ResponseBody List<Integer> edit_tariff(HttpServletRequest request, TariffForm tariffForm) {
 		List<Integer> errors = new ArrayList<Integer>();
 		try {
 			if (!is_admin(request)) {
@@ -218,14 +218,14 @@ public class TariffController {
                 throw new Exception();
             }
 
-            Integer id_s = usersForm.getId();
-            String first_name = usersForm.getFirst_name();
-            String last_name = usersForm.getLast_name();
-            String company_s = usersForm.getCompany();
-            String address = usersForm.getAddress();
-            String email = usersForm.getEmail();
-            String personal_or_comm = usersForm.getPersonal_or_commercial();
-            String passport = usersForm.getPassport();
+            Integer tariffId = tariffForm.getTariffId();
+            String name = tariffForm.getName();
+            Integer intMb = tariffForm.getIntMb();
+            Integer intDay = tariffForm.getIntDay();
+            Integer callDayPerMinute = tariffForm.getCallDayPerMinute();
+            Integer callNightPerMinute = tariffForm.getCallNightPerMinute();
+            Integer callPerDay = tariffForm.getCallPerDay();
+            Integer sms = tariffForm.getSms();
 
             /*
 			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -242,23 +242,23 @@ public class TariffController {
 			if (users.getByEmail(email).size() != 0)
 				errors.add(25);
             */
-            /*
-            Customer customer = new Customer();
-            customer.setCustomerId(id_s);
-            customer.setFirstName(first_name);
-            customer.setLastName(last_name);
-            customer.setCompany(company_s);
-            customer.setAddress(address);
-            customer.setEmail(email);
-            customer.setCommersialOrPersonal(personal_or_comm);
-            customer.setPassport(passport);
 
-            customerDAO.updateCustomer(customer);
+            Tariff tariff = new Tariff();
+            tariff.setTariffId(tariffId);
+            tariff.setName(name);
+            tariff.setIntMb(intMb);
+            tariff.setIntDay(intDay);
+            tariff.setCallDayPerMinute(callDayPerMinute);
+            tariff.setCallNightPerMinute(callNightPerMinute);
+            tariff.setCallPerDay(callPerDay);
+            tariff.setSms(sms);
+            tariffDAO.updateTariff(tariff);
+
 		} catch (Exception e) {
 			if (errors.size() == 0)
 				errors.add(43);
 		}
 		return errors;
-	}*/
+	}
 }
 

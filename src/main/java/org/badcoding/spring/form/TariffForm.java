@@ -10,11 +10,11 @@ public class TariffForm {
     private Integer callPerDay;
     private Integer sms;
 
-    public int getTariffId() {
+    public Integer getTariffId() {
         return tariffId;
     }
 
-    public void setTariffId(int tariffId) {
+    public void setTariffId(Integer tariffId) {
         this.tariffId = tariffId;
     }
 

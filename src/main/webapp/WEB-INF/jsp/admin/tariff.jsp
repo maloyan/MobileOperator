@@ -30,26 +30,26 @@
 <%@include file="../include/navbar.jsp" %>
 
 <!-- Форма добавления пользователя -->
-<div id="user_edit_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+<div id="tariff_edit_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div id="info-modal-div" class="modal-content" align="center">
             <div class="modal-header" align="left">
                 <button id="modal_close_btn" class="close" aria-hidden="true" data-dismiss="modal" type="button">
                     ×
                 </button>
-                <h4 id="user_edit_header" class="modal-title">
+                <h4 id="tariff_edit_header" class="modal-title">
                 </h4>
             </div>
-            <div id="user_edit_body" class="modal-body">
-                <form role="form" id="user_form">
-                    <p><input id="id" name="id" type="text" class="form-control" placeholder="ID" /></p>
-                    <p><input id="first_name" name="first_name" type="text" class="form-control" placeholder="Имя" /></p>
-                    <p><input id="last_name"  name="last_name" type="text" class="form-control" placeholder="Фамилия" /></p>
-                    <p><input id="company"  name="company" type="text" class="form-control" placeholder="Компания(если есть)" /></p>
-                    <p><input id="email" name="email" type="text" class="form-control" placeholder="email" /></p>
-                    <p><input id="address" name="address" type="text" class="form-control" placeholder="адрес" /></p>
-                    <p><input id="personal_or_commercial" name="personal_or_commercial" type="text" class="form-control" placeholder="физическое лицо или юридическое" /></p>
-                    <p><input id="passport" name="passport" type="text" class="form-control" placeholder="паспорт" /></p>
+            <div id="tariff_edit_body" class="modal-body">
+                <form role="form" id="tariff_form">
+                    <p><input id="tariffId" name="tariffId" type="text" class="form-control" placeholder="Код тарифа" /></p>
+                    <p><input id="name" name="name" type="text" class="form-control" placeholder="Название" /></p>
+                    <p><input id="intMb"  name="intMb" type="text" class="form-control" placeholder="Интернет руб/Мб" /></p>
+                    <p><input id="intDay"  name="intDay" type="text" class="form-control" placeholder="Интернет безлимит руб/день" /></p>
+                    <p><input id="callDayPerMinute" name="callDayPerMinute" type="text" class="form-control" placeholder="Звонок днем руб/мин" /></p>
+                    <p><input id="callNightPerMinute" name="callNightPerMinute" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
+                    <p><input id="callPerDay" name="callPerDay" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
+                    <p><input id="sms" name="sms" type="text" class="form-control" placeholder="Сообщение руб/смс" /></p>
                 </form>
             </div>
             <div class="modal-footer">
@@ -75,7 +75,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">
                 <spring:message code="title.tariff" />
-                <button id="user_add_btn" type="button" class="btn btn-default btn-lg">
+                <button id="tariff_add_btn" type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
             </h1>
@@ -110,43 +110,34 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 main">
                         <form:form method="get" id="tariff_form" commandName="tariffForm" action="/admin/tariff_search"  role="form">
-
-                            <spring:message code="label.admin.01" var="msg1" />
-                            <spring:message code="label.admin.18" var="msg2" />
-                            <spring:message code="label.admin.19" var="msg3" />
-                            <spring:message code="label.admin.20" var="msg4" />
-                            <spring:message code="label.admin.21" var="msg5" />
-                            <spring:message code="label.admin.22" var="msg6" />
-                            <spring:message code="label.admin.23" var="msg7" />
-                            <spring:message code="label.admin.24" var="msg8" />
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="tariffId" path="tariffId" type="text" class="form-control" placeholder="${ msg1 }" /></p>
+                                    <p><form:input id="tariffId" path="tariffId" type="text" class="form-control" placeholder="Код тарифа" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="name" path="name" type="text" class="form-control" placeholder="${ msg2 }" /></p>
+                                    <p><form:input id="name" path="name" type="text" class="form-control" placeholder="Название" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="intMb" path="intMb" type="text" class="form-control" placeholder="${ msg3 }" /></p>
+                                    <p><form:input id="intMb" path="intMb" type="text" class="form-control" placeholder="Интернет руб/Мб" /></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="intDay" path="intDay" type="text" class="form-control" placeholder="${ msg4 }" /></p>
+                                    <p><form:input id="intDay" path="intDay" type="text" class="form-control" placeholder="Интернет безлимит руб/день" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="callDayPerMinute" path="callDayPerMinute" type="text" class="form-control" placeholder="${ msg5 }" /></p>
+                                    <p><form:input id="callDayPerMinute" path="callDayPerMinute" type="text" class="form-control" placeholder="Звонок днем руб/мин" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="callNightPerMinute" path="callNightPerMinute" type="text" class="form-control" placeholder="${ msg6 }" /></p>
+                                    <p><form:input id="callNightPerMinute" path="callNightPerMinute" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="callPerDay" path="callPerDay" type="text" class="form-control" placeholder="${ msg7 }" /></p>
+                                    <p><form:input id="callPerDay" path="callPerDay" type="text" class="form-control" placeholder="Звонок руб/день" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="sms" path="sms" type="text" class="form-control" placeholder="${ msg8 }" /></p>
+                                    <p><form:input id="sms" path="sms" type="text" class="form-control" placeholder="Сообщение руб/смс" /></p>
                                 </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
@@ -162,30 +153,22 @@
                         <div class="row highlight">
                             <div class="col-md-5">
                                 <p>
-                                    <b><spring:message code="label.admin.25" />:</b> ${ result.firstName }
-                                </p>
-                                <p>
-                                    <b><spring:message code="label.admin.26" />:</b> ${ result.lastName }
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <p>
-                                    <b><spring:message code="label.admin.28" />:</b> ${ result.email }
+                                    <b><spring:message code="label.admin.25" />:</b> ${ result.name }
                                 </p>
                             </div>
                             <div class="col-md-1 no-rights" align="right">
                                 <p>
-                                    <button id="rm-${ result.customerId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> rm-last</c:if>">
+                                    <button id="rm-${ result.tariffId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> rm-last</c:if>">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </button>
                                 </p>
                                 <p>
-                                    <button id="edit-${ result.customerId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> edit-last</c:if>">
+                                    <button id="edit-${ result.tariffId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> edit-last</c:if>">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </p>
                                 <p>
-                                    <b><spring:message code="label.admin.01" />:</b> ${ result.customerId }
+                                    <b><spring:message code="label.admin.01" />:</b> ${ result.tariffId }
                                 </p>
                             </div>
                         </div>
@@ -202,31 +185,31 @@
     $('#modal_add_btn').hide()
     $('#modal_edit_btn').hide()
     $('#modal_remove_btn').hide()
-    $('#user_edit_modal').on('hidden.bs.modal', function (e) {
+    $('#tariff_edit_modal').on('hidden.bs.modal', function (e) {
         $('#id').show()
         $('#modal_add_btn').hide()
         $('#modal_edit_btn').hide()
         $('#modal_remove_btn').hide()
-        $('#user_form :input').each(function() {
+        $('#tariff_form :input').each(function() {
             $(this).prop('disabled', false)
             $(this).show()
             $(this).val("")
         });
-        $('#user_form').show()
+        $('#tariff_form').show()
         $('#errors_p').remove()
     })
 </script>
 
 <!-- Всплывающее окно для add -->
 <script>
-    var btn = $("#user_add_btn")[0]
+    var btn = $("#tariff_add_btn")[0]
     btn.onclick = function() {
         $('#id').show()
         $('#modal_add_btn').show()
         $('#registered').hide()
         $('#last_login').hide()
-        $('#user_edit_header').text("<spring:message code="label.admin.14" /> <spring:message code="label.admin.31" />")
-        $('#user_edit_modal').modal()
+        $('#tariff_edit_header').text("<spring:message code="label.admin.14" /> <spring:message code="label.admin.31" />")
+        $('#tariff_edit_modal').modal()
     }
 </script>
 <script>
@@ -236,12 +219,12 @@
         $('#errors_p').remove()
         var btn = $(this)
         btn.button('loading')
-        $.post( '<c:url value='/admin/add_user' />'
-            , $('#user_form').serialize()
+        $.post( '<c:url value='/admin/add_tariff' />'
+            , $('#tariff_form').serialize()
             , function(data) {
                 $('<p/>', {
                     id: 'errors_p'
-                }).appendTo('#user_edit_body');
+                }).appendTo('#tariff_edit_body');
                 if (data.length == 0) {
                     $('<div/>', {
                         class: 'alert alert-success fade in',
@@ -249,7 +232,7 @@
                     }).appendTo('#errors_p');
                     $('#alert_success').append('<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>')
                     window['msg1000'].appendTo('#alert_success')
-                    $('#user_form :input').each(function() {
+                    $('#tariff_form :input').each(function() {
                         $(this).val("");
                     });
                 } else {
@@ -272,11 +255,11 @@
     $.each($(":button[id^='rm-']"), function(i, btn) {
         btn.onclick = function () {
             $('#password').hide()
-            $('#user_form :input').each(function() {
+            $('#tariff_form :input').each(function() {
                 $(this).prop('disabled', true)
             })
             $('#password').hide()
-            $('#user_edit_header').text("<spring:message code="label.admin.15" /> <spring:message code="label.admin.31" />")
+            $('#tariff_edit_header').text("<spring:message code="label.admin.15" /> <spring:message code="label.admin.31" />")
             var i = $(this).attr("id").match(/[\d]+/)[0]
             fill_form(i, '#modal_remove_btn')
         }
@@ -289,12 +272,12 @@
         var btn = $(this)
         btn.button('loading')
         var i = $('#id').val().match(/[\d]+/)[0]
-        $.post( '<c:url value='/admin/remove_user' />'
-            , { user_id: i }
+        $.post( '<c:url value='/admin/remove_tariff' />'
+            , { tariff_id: i }
             , function(data) {
                 $('<p/>', {
                     id: 'errors_p'
-                }).appendTo('#user_edit_body');
+                }).appendTo('#tariff_edit_body');
                 if (data.length == 0) {
                     $('<div/>', {
                         class: 'alert alert-success fade in',
@@ -302,7 +285,7 @@
                     }).appendTo('#errors_p');
                     $('#alert_success').append('<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>')
                     window['msg1000'].appendTo('#alert_success')
-                    $('#user_form').hide()
+                    $('#tariff_form').hide()
                 } else {
                     var i;
                     for (i = 0; i < data.length; ++i) {
@@ -323,7 +306,7 @@
 <script>
     $.each($(":button[id^='edit-']"), function(i, btn) {
         btn.onclick = function () {
-            $('#user_edit_header').text("<spring:message code="label.admin.16" /> <spring:message code="label.admin.31" />")
+            $('#tariff_edit_header').text("<spring:message code="label.admin.16" /> <spring:message code="label.admin.31" />")
             $('#id').prop('disabled', true)
             $('#registered').hide()
             $('#last_login').hide()
@@ -341,13 +324,13 @@
         $('#id').prop('disabled', false)
         var btn = $(this)
         btn.button('loading')
-        $.post( '<c:url value='/admin/edit_user' />'
-            , $('#user_form').serialize()
+        $.post( '<c:url value='/admin/edit_tariff' />'
+            , $('#tariff_form').serialize()
             , function(data) {
                 $('#id').prop('disabled', true)
                 $('<p/>', {
                     id: 'errors_p'
-                }).appendTo('#user_edit_body');
+                }).appendTo('#tariff_edit_body');
                 if (data.length == 0) {
                     $('<div/>', {
                         class: 'alert alert-success fade in',
@@ -373,13 +356,13 @@
 </script>
 <script>
     function fill_form(i, button) {
-        $('#user_edit_modal').modal()
-        var request = $.getJSON("get_user", { user_id: i }, function(data) {
+        $('#tariff_edit_modal').modal()
+        var request = $.getJSON("get_tariff", { tariff_id: i }, function(data) {
             if (data.length == 1) { // error
-                $('#user_form').hide()
+                $('#tariff_form').hide()
                 $('<p/>', {
                     id: 'errors_p'
-                }).appendTo('#user_edit_body');
+                }).appendTo('#tariff_edit_body');
                 var i;
                 for (i = 0; i < data[0].length; ++i) {
                     var error = data[0][i]
@@ -390,23 +373,22 @@
                     window['msg' + error.toString()].appendTo('#alert_error' + i.toString())
                 };
             } else {
-                var result = data[0]
-                $('#id').val(result[0])
-                $('#first_name').val(result[1])
-                $('#last_name').val(result[2])
-                $('#company').val(result[3])
-                $('#email').val(result[4])
-                $('#address').val(result[5])
-                $('#personal_or_commercial').val(result[6])
-                $('#passport').val(result[7])
+                $('#tariffId').val(result[0])
+                $('#name').val(result[1])
+                $('#intMb').val(result[2])
+                $('#intDay').val(result[3])
+                $('#callDayPerMinute').val(result[4])
+                $('#callNightPerMinute').val(result[5])
+                $('#callPerDay').val(result[6])
+                $('#sms').val(result[7])
                 $(button).show()
             }
         });
         request.fail(function() {
-            $('#user_form').hide()
+            $('#tariff_form').hide()
             $('<p/>', {
                 id: 'errors_p'
-            }).appendTo('#user_edit_body');
+            }).appendTo('#tariff_edit_body');
             $('<div/>', {
                 class: 'alert alert-danger fade in',
                 id: 'alert_error'
