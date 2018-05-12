@@ -65,7 +65,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="<c:url value="/admin/search" />"><spring:message code="title.users" /></a></li>
+                <li class="active"><a href="<c:url value="/admin/users" />"><spring:message code="title.users" /></a></li>
                 <li><a href="<c:url value="/admin/tariff" />"><spring:message code="title.tariff" /></a></li>
             </ul>
             <ul class="nav nav-sidebar">

@@ -53,11 +53,11 @@ public class TariffController {
 			Integer tariffId = tariffForm.getTariffId();
 			String name = tariffForm.getName();
 			Integer intMb = tariffForm.getIntMb();
-			Integer intDay;
-			Integer callDayPerMinute;
-			Integer callNightPerMinute;
-			Integer callPerDay;
-			Integer sms;
+			Integer intDay = tariffForm.getIntDay();
+			Integer callDayPerMinute = tariffForm.getCallDayPerMinute();
+			Integer callNightPerMinute = tariffForm.getCallNightPerMinute();
+			Integer callPerDay = tariffForm.getCallPerDay();
+			Integer sms = tariffForm.getSms();
 
             if (tariffId == null)
                 tariffId = -1;
@@ -74,14 +74,13 @@ public class TariffController {
 				company_s = "-1";
 			if (paid_s == "")
 				paid_s = "-1";
-            */
-
+*/
 			if (tariffId != -1) {
-				Customer t = customerDAO.getCustomerById(id_s);
+				Tariff t = tariffDAO.getTariffById(tariffId);
 				if (t != null)
 					result.add(t);
 			} else {
-				result = customerDAO.listCustomers();
+				result = tariffDAO.listTariffs();
 			}
 			if (result.size() == 0) {
 				errors.add(48);
@@ -93,10 +92,10 @@ public class TariffController {
 		} catch (Exception e) {
 			model.put("errors", errors);
 		}
-		model.put("usersForm", usersForm);
-		return "/admin/users";
+		model.put("tariffForm", tariffForm);
+		return "/admin/tariff";
 	}
-
+/*
 	@RequestMapping(value="/add_user", method=RequestMethod.POST)
 	public @ResponseBody List<Integer> add_user(HttpServletRequest request, UsersForm usersForm) {
 		List<Integer> errors = new ArrayList<Integer>();
@@ -115,7 +114,7 @@ public class TariffController {
             String personal_or_comm = usersForm.getPersonal_or_commercial();
             String passport = usersForm.getPassport();
 
-            /*
+
 			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
             if (!email_regex.matcher(email).matches())
                 errors.add(24);
@@ -129,7 +128,7 @@ public class TariffController {
 
 			if (users.getByEmail(email).size() != 0)
 				errors.add(25);
-            */
+
             Customer customer = new Customer();
             customer.setCustomerId(id_s);
             customer.setFirstName(first_name);
@@ -149,7 +148,7 @@ public class TariffController {
 		return errors;
 	}
 
-	@RequestMapping(value="/get_user", method=RequestMethod.GET)
+	@RequestMapping(value="/get_tariff", method=RequestMethod.GET)
 	public @ResponseBody List<List<String>> get_user(HttpServletRequest request, @RequestParam int user_id) {
 		List<String> errors = new ArrayList<String>();
 		List<List<String>> result = new ArrayList<List<String>>();
@@ -243,6 +242,7 @@ public class TariffController {
 			if (users.getByEmail(email).size() != 0)
 				errors.add(25);
             */
+            /*
             Customer customer = new Customer();
             customer.setCustomerId(id_s);
             customer.setFirstName(first_name);
@@ -259,6 +259,6 @@ public class TariffController {
 				errors.add(43);
 		}
 		return errors;
-	}
+	}*/
 }
 

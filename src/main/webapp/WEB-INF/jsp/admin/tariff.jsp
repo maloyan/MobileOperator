@@ -65,7 +65,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="<c:url value="/admin/search" />"><spring:message code="title.users" /></a></li>
+                <li><a href="<c:url value="/admin/users" />"><spring:message code="title.users" /></a></li>
                 <li class="active"><a href="<c:url value="/admin/tariff" />"><spring:message code="title.tariff" /></a></li>
             </ul>
             <ul class="nav nav-sidebar">
@@ -74,7 +74,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">
-                <spring:message code="title.users" />
+                <spring:message code="title.tariff" />
                 <button id="user_add_btn" type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
@@ -109,7 +109,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 main">
-                        <form:form method="get" id="users_form" commandName="usersForm" action="/admin/users_search"  role="form">
+                        <form:form method="get" id="tariff_form" commandName="tariffForm" action="/admin/tariff_search"  role="form">
+
                             <spring:message code="label.admin.01" var="msg1" />
                             <spring:message code="label.admin.18" var="msg2" />
                             <spring:message code="label.admin.19" var="msg3" />
@@ -120,32 +121,32 @@
                             <spring:message code="label.admin.24" var="msg8" />
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="id" path="id" type="text" class="form-control" placeholder="${ msg1 }" /></p>
+                                    <p><form:input id="tariffId" path="tariffId" type="text" class="form-control" placeholder="${ msg1 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="first_name" path="first_name" type="text" class="form-control" placeholder="${ msg2 }" /></p>
+                                    <p><form:input id="name" path="name" type="text" class="form-control" placeholder="${ msg2 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="last_name" path="last_name" type="text" class="form-control" placeholder="${ msg3 }" /></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="company" path="company" type="text" class="form-control" placeholder="${ msg4 }" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="email" path="email" type="text" class="form-control" placeholder="${ msg5 }" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="address" path="address" type="text" class="form-control" placeholder="${ msg6 }" /></p>
+                                    <p><form:input id="intMb" path="intMb" type="text" class="form-control" placeholder="${ msg3 }" /></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="personal_or_commercial" path="personal_or_commercial" type="text" class="form-control" placeholder="${ msg7 }" /></p>
+                                    <p><form:input id="intDay" path="intDay" type="text" class="form-control" placeholder="${ msg4 }" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="passport" path="passport" type="text" class="form-control" placeholder="${ msg8 }" /></p>
+                                    <p><form:input id="callDayPerMinute" path="callDayPerMinute" type="text" class="form-control" placeholder="${ msg5 }" /></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p><form:input id="callNightPerMinute" path="callNightPerMinute" type="text" class="form-control" placeholder="${ msg6 }" /></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p><form:input id="callPerDay" path="callPerDay" type="text" class="form-control" placeholder="${ msg7 }" /></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p><form:input id="sms" path="sms" type="text" class="form-control" placeholder="${ msg8 }" /></p>
                                 </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
