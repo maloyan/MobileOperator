@@ -67,6 +67,7 @@
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="<c:url value="/admin/users" />"><spring:message code="title.users" /></a></li>
                 <li><a href="<c:url value="/admin/tariff" />"><spring:message code="title.tariff" /></a></li>
+                <li><a href="<c:url value="/admin/contract" />">Контракты</a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="<c:url value="/admin/logout" />"><spring:message code="label.user.12" /></a></li>

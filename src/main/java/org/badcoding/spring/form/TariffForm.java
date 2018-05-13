@@ -1,7 +1,7 @@
 package org.badcoding.spring.form;
 
 public class TariffForm {
-    private Integer tariffId;
+    private Integer id;
     private String name;
     private Integer intMb;
     private Integer intDay;
@@ -10,12 +10,12 @@ public class TariffForm {
     private Integer callPerDay;
     private Integer sms;
 
-    public Integer getTariffId() {
-        return tariffId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTariffId(Integer tariffId) {
-        this.tariffId = tariffId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

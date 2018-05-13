@@ -4,6 +4,8 @@ import org.badcoding.hibernate.logic.Factory;
 import org.badcoding.hibernate.stored.*;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
+
+import java.util.Calendar;
 import java.util.List;
 
 public class ContractDAOImplTest {
@@ -13,11 +15,12 @@ public class ContractDAOImplTest {
         Customer customer = Factory.GetInstance().getCustomerDAO().getCustomerById(2);
         Tariff tariff = Factory.GetInstance().getTariffDAO().getTariffById(1);
         Contract contract = new Contract();
-        contract.setContractId(10);
+        contract.setContractId(11);
         contract.setCustomer(customer);
         contract.setTariff(tariff);
         contract.setBalance(100);
         contract.setPhoneNumber("123123123");
+        contract.setRegisterDate(Calendar.getInstance().getTime());
         Factory.GetInstance().getContractDAO().addContract(contract);
 
         Customer customer1 = customer;

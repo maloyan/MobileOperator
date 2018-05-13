@@ -50,7 +50,7 @@ public class TariffController {
 			return "redirect:/index";
 		}
 		try {
-			Integer tariffId = tariffForm.getTariffId();
+			Integer id = tariffForm.getId();
 			String name = tariffForm.getName();
 			Integer intMb = tariffForm.getIntMb();
 			Integer intDay = tariffForm.getIntDay();
@@ -59,8 +59,8 @@ public class TariffController {
 			Integer callPerDay = tariffForm.getCallPerDay();
 			Integer sms = tariffForm.getSms();
 
-            if (tariffId == null)
-                tariffId = -1;
+            if (id == null)
+                id = -1;
             /*
 			if (!id_s.equals("") && (!first_name.equals("") || !last_name.equals("") || !company_s.equals("") || !address.equals("") || !email.equals("") || !personal_or_comm.equals("") || !passport.equals(""))) {
 				errors.add(46);
@@ -76,8 +76,8 @@ public class TariffController {
 				paid_s = "-1";
 			*/
 
-            if (tariffId != -1) {
-				Tariff t = tariffDAO.getTariffById(tariffId);
+            if (id != -1) {
+				Tariff t = tariffDAO.getTariffById(id);
 				if (t != null)
 					result.add(t);
 			} else {
@@ -106,7 +106,7 @@ public class TariffController {
 				throw new Exception();
 			}
 
-            Integer tariffId = tariffForm.getTariffId();
+            Integer id = tariffForm.getId();
             String name = tariffForm.getName();
             Integer intMb = tariffForm.getIntMb();
             Integer intDay = tariffForm.getIntDay();
@@ -131,7 +131,7 @@ public class TariffController {
 				errors.add(25);
 */
             Tariff tariff = new Tariff();
-            tariff.setTariffId(tariffId);
+            tariff.setTariffId(id);
             tariff.setName(name);
             tariff.setIntMb(intMb);
             tariff.setIntDay(intDay);
@@ -149,7 +149,7 @@ public class TariffController {
 	}
 
 	@RequestMapping(value="/get_tariff", method=RequestMethod.GET)
-	public @ResponseBody List<List<String>> get_tariff(HttpServletRequest request, @RequestParam int id) {
+	public @ResponseBody List<List<String>> get_tariff(HttpServletRequest request, @RequestParam int tariff_id) {
 		List<String> errors = new ArrayList<String>();
 		List<List<String>> result = new ArrayList<List<String>>();
 		try {
@@ -157,7 +157,7 @@ public class TariffController {
 				errors.add("45");
 				throw new Exception();
 			}
-			Tariff tariff = tariffDAO.getTariffById(id);
+			Tariff tariff = tariffDAO.getTariffById(tariff_id);
 			if (tariff == null) {
 				errors.add("48");
 				throw new Exception();
@@ -184,14 +184,14 @@ public class TariffController {
 	}
 
 	@RequestMapping(value="/remove_tariff", method=RequestMethod.POST)
-	public @ResponseBody List<Integer> remove_tariff(HttpServletRequest request, Integer id) {
+	public @ResponseBody List<Integer> remove_tariff(HttpServletRequest request, Integer tariff_id) {
 		List<Integer> errors = new ArrayList<Integer>();
 		try {
 			if (!is_admin(request)) {
 				errors.add(45);
 				throw new Exception();
 			}
-			Tariff tariff = tariffDAO.getTariffById(id);
+			Tariff tariff = tariffDAO.getTariffById(tariff_id);
 			if (tariff == null) {
 				errors.add(50);
 				throw new Exception();
@@ -218,7 +218,7 @@ public class TariffController {
                 throw new Exception();
             }
 
-            Integer tariffId = tariffForm.getTariffId();
+            Integer id = tariffForm.getId();
             String name = tariffForm.getName();
             Integer intMb = tariffForm.getIntMb();
             Integer intDay = tariffForm.getIntDay();
@@ -241,10 +241,11 @@ public class TariffController {
 
 			if (users.getByEmail(email).size() != 0)
 				errors.add(25);
-            */
 
+            */
             Tariff tariff = new Tariff();
-            tariff.setTariffId(tariffId);
+
+            tariff.setTariffId(id);
             tariff.setName(name);
             tariff.setIntMb(intMb);
             tariff.setIntDay(intDay);
@@ -252,8 +253,8 @@ public class TariffController {
             tariff.setCallNightPerMinute(callNightPerMinute);
             tariff.setCallPerDay(callPerDay);
             tariff.setSms(sms);
-            tariffDAO.updateTariff(tariff);
 
+            tariffDAO.updateTariff(tariff);
 		} catch (Exception e) {
 			if (errors.size() == 0)
 				errors.add(43);

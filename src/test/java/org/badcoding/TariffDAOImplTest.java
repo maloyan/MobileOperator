@@ -21,7 +21,17 @@ public class TariffDAOImplTest {
     }
 
     @Test
-    public void removeTariff() {
+    public void testUpdateTariff() {
+        Tariff tariff = Factory.GetInstance().getTariffDAO().getTariffById(1);
+        tariff.setSms(24816);
+        Factory.GetInstance().getTariffDAO().updateTariff(tariff);
+        int one = 24816;
+        int two = tariff.getSms();
+        assertEquals(one, two);
+    }
+
+    @Test
+    public void testRemoveTariff() {
         Tariff tariff = new Tariff();
         tariff.setTariffId(10);
         tariff.setName("slkjfklsdfj");

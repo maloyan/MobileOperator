@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Тарифы</title>
+    <title>Контракты</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/js/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 <body>
 <%@include file="../include/navbar.jsp" %>
 
-<!-- Форма добавления тарифа -->
+<!-- Форма добавления Контракта -->
 <div id="user_edit_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div id="info-modal-div" class="modal-content" align="center">
@@ -41,21 +41,17 @@
                 </h4>
             </div>
             <div id="user_edit_body" class="modal-body">
-                <form role="form" id="tariff_form">
-                    <p><input id="id" name="id" type="text" class="form-control" placeholder="Код тарифа" /></p>
-                    <p><input id="name" name="name" type="text" class="form-control" placeholder="Название" /></p>
-                    <p><input id="intMb"  name="intMb" type="text" class="form-control" placeholder="Интернет руб/Мб" /></p>
-                    <p><input id="intDay"  name="intDay" type="text" class="form-control" placeholder="Интернет безлимит руб/день" /></p>
-                    <p><input id="callDayPerMinute" name="callDayPerMinute" type="text" class="form-control" placeholder="Звонок днем руб/мин" /></p>
-                    <p><input id="callNightPerMinute" name="callNightPerMinute" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
-                    <p><input id="callPerDay" name="callPerDay" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
-                    <p><input id="sms" name="sms" type="text" class="form-control" placeholder="Сообщение руб/смс" /></p>
+                <form role="form" id="contract_form">
+                    <p><input id="id" name="id" type="text" class="form-control" placeholder="Номер договора" /></p>
+                    <p><input id="customerId" name="customerId" type="text" class="form-control" placeholder="Id Клиента" /></p>
+                    <p><input id="tariffId"  name="tariffId" type="text" class="form-control" placeholder="Код тарифа" /></p>
+                    <p><input id="phoneNumber"  name="phoneNumber" type="text" class="form-control" placeholder="Телефон" /></p>
+                    <p><input id="balance" name="balance" type="text" class="form-control" placeholder="Баланс" /></p>
                 </form>
             </div>
             <div class="modal-footer">
                 <button id="modal_add_btn" type="button" class="btn btn-primary"> Добавить </button>
                 <button id="modal_edit_btn" type="button" class="btn btn-primary"> Сохранить </button>
-                <button id="modal_remove_btn" type="button" class="btn btn-danger"> Удалить </button>
             </div>
         </div>
     </div>
@@ -66,8 +62,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a href="<c:url value="/admin/users" />"><spring:message code="title.users" /></a></li>
-                <li class="active"><a href="<c:url value="/admin/tariff" />"><spring:message code="title.tariff" /></a></li>
-                <li><a href="<c:url value="/admin/contract" />">Контракты</a></li>
+                <li><a href="<c:url value="/admin/tariff" />"><spring:message code="title.tariff" /></a></li>
+                <li class="active"><a href="<c:url value="/admin/contract" />">Контракты</a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="<c:url value="/admin/logout" />"><spring:message code="label.user.12" /></a></li>
@@ -75,7 +71,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">
-                <spring:message code="title.tariff" />
+                Контракты
                 <button id="user_add_btn" type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
@@ -110,35 +106,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 main">
-                        <form:form method="get" id="tariffs_form" commandName="tariffForm" action="/admin/tariff_search"  role="form">
+                        <form:form method="get" id="contracts_form" commandName="contractForm" action="/admin/contract_search"  role="form">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><form:input id="id" path="id" type="text" class="form-control" placeholder="Код тарифа" /></p>
+                                    <p><form:input id="id" path="id" type="text" class="form-control" placeholder="Номер договора" /></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p><form:input id="name" path="name" type="text" class="form-control" placeholder="Название" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="intMb" path="intMb" type="text" class="form-control" placeholder="Интернет руб/Мб" /></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="intDay" path="intDay" type="text" class="form-control" placeholder="Интернет безлимит руб/день" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="callDayPerMinute" path="callDayPerMinute" type="text" class="form-control" placeholder="Звонок днем руб/мин" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="callNightPerMinute" path="callNightPerMinute" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="callPerDay" path="callPerDay" type="text" class="form-control" placeholder="Звонок руб/день" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="sms" path="sms" type="text" class="form-control" placeholder="Сообщение руб/смс" /></p>
+                                    <p><form:input id="phoneNumber" path="phoneNumber" type="text" class="form-control" placeholder="Телефон" /></p>
                                 </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
@@ -154,41 +128,29 @@
                         <div class="row highlight">
                             <div class="col-md-5">
                                 <p>
-                                    <b>Название тарифа</b> ${ result.name }
+                                    <b>Номер договора</b> ${ result.contractId }
                                 </p>
                                 <p>
-                                    <b>Интернет руб/Мб</b> ${ result.intMb }
+                                    <b>Телефонный номер</b> ${ result.phoneNumber }
                                 </p>
                                 <p>
-                                    <b>Интернет руб/день</b> ${ result.intDay }
-                                </p>
-                                <p>
-                                    <b>Звонки руб/мин (день)</b> ${ result.callDayPerMinute }
-                                </p>
-                                <p>
-                                    <b>Звонки руб/мин (ночь)</b> ${ result.callNightPerMinute }
-                                </p>
-                                <p>
-                                    <b>Звонки руб/день</b> ${ result.callPerDay }
-                                </p>
-                                <p>
-                                    <b>Сообщения руб/смс</b> ${ result.sms }
+                                    <b>Баланс</b> ${ result.balance }
                                 </p>
 
                             </div>
                             <div class="col-md-1 no-rights" align="right">
                                 <p>
-                                    <button id="rm-${ result.tariffId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> rm-last</c:if>">
+                                    <button id="rm-${ result.contractId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> rm-last</c:if>">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </button>
                                 </p>
                                 <p>
-                                    <button id="edit-${ result.tariffId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> edit-last</c:if>">
+                                    <button id="edit-${ result.contractId }-btn" type="button" class="btn btn-default btn-xs<c:if test="${ status.isLast() }"> edit-last</c:if>">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </p>
                                 <p>
-                                    <b><spring:message code="label.admin.01" />:</b> ${ result.tariffId }
+                                    <b><spring:message code="label.admin.01" />:</b> ${ result.contractId }
                                 </p>
                             </div>
                         </div>
@@ -211,12 +173,12 @@
         $('#modal_add_btn').hide()
         $('#modal_edit_btn').hide()
         $('#modal_remove_btn').hide()
-        $('#tariff_form :input').each(function() {
+        $('#contract_form :input').each(function() {
             $(this).prop('disabled', false)
             $(this).show()
             $(this).val("")
         });
-        $('#tariff_form').show()
+        $('#contract_form').show()
         $('#errors_p').remove()
     })
 </script>
@@ -241,8 +203,8 @@
         $('#errors_p').remove()
         var btn = $(this)
         btn.button('loading')
-        $.post( '<c:url value='/admin/add_tariff' />'
-            , $('#tariff_form').serialize()
+        $.post( '<c:url value='/admin/add_contract' />'
+            , $('#contract_form').serialize()
             , function(data) {
                 $('<p/>', {
                     id: 'errors_p'
@@ -254,7 +216,7 @@
                     }).appendTo('#errors_p');
                     $('#alert_success').append('<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>')
                     window['msg1000'].appendTo('#alert_success')
-                    $('#tariff_form :input').each(function() {
+                    $('#contract_form :input').each(function() {
                         $(this).val("");
                     });
                 } else {
@@ -277,7 +239,7 @@
     $.each($(":button[id^='rm-']"), function(i, btn) {
         btn.onclick = function () {
             $('#password').hide()
-            $('#tariff_form :input').each(function() {
+            $('#contract_form :input').each(function() {
                 $(this).prop('disabled', true)
             })
             $('#password').hide()
@@ -287,6 +249,7 @@
         }
     })
 </script>
+<!--
 <script>
     var btn = $("#modal_remove_btn")[0]
     btn.disabled = false;
@@ -294,8 +257,8 @@
         var btn = $(this)
         btn.button('loading')
         var i = $('#id').val().match(/[\d]+/)[0]
-        $.post( '<c:url value='/admin/remove_tariff' />'
-            , { tariff_id: i }
+        $.post( '<c:url value='/admin/remove_contract' />'
+            , { contract_id: i }
             , function(data) {
                 $('<p/>', {
                     id: 'errors_p'
@@ -307,7 +270,7 @@
                     }).appendTo('#errors_p');
                     $('#alert_success').append('<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>')
                     window['msg1000'].appendTo('#alert_success')
-                    $('#tariff_form').hide()
+                    $('#contract_form').hide()
                 } else {
                     var i;
                     for (i = 0; i < data.length; ++i) {
@@ -325,13 +288,14 @@
             });
     }
 </script>
+-->
 <script>
     $.each($(":button[id^='edit-']"), function(i, btn) {
         btn.onclick = function () {
             $('#user_edit_header').text("<spring:message code="label.admin.16" /> <spring:message code="label.admin.31" />")
             $('#id').prop('disabled', true)
-            $('#registered').hide()
-            $('#last_login').hide()
+            $('#customerId').prop('disabled', true)
+            $('#phoneNumber').prop('disabled', true)
             $('#password').hide()
             var i = $(this).attr("id").match(/[\d]+/)[0]
             fill_form(i, '#modal_edit_btn')
@@ -347,8 +311,8 @@
         $('#id').prop('disabled', false)
         var btn = $(this)
         btn.button('loading')
-        $.post( '<c:url value='/admin/edit_tariff' />'
-            , $('#tariff_form').serialize()
+        $.post( '<c:url value='/admin/edit_contract' />'
+            , $('#contract_form').serialize()
             , function(data) {
                 $('#id').prop('disabled', true)
                 $('<p/>', {
@@ -381,9 +345,9 @@
 <script>
     function fill_form(i, button) {
         $('#user_edit_modal').modal()
-        var request = $.getJSON("get_tariff", { tariff_id: i }, function(data) {
+        var request = $.getJSON("get_contract", { contract_id: i }, function(data) {
             if (data.length == 1) { // error
-                $('#tariff_form').hide()
+                $('#contract_form').hide()
                 $('<p/>', {
                     id: 'errors_p'
                 }).appendTo('#user_edit_body');
@@ -399,18 +363,15 @@
             } else {
                 var result = data[0]
                 $('#id').val(result[0])
-                $('#name').val(result[1])
-                $('#intMb').val(result[2])
-                $('#intDay').val(result[3])
-                $('#callDayPerMinute').val(result[4])
-                $('#callNightPerMinute').val(result[5])
-                $('#callPerDay').val(result[6])
-                $('#sms').val(result[7])
+                $('#customerId').val(result[1])
+                $('#tariffId').val(result[2])
+                $('#phoneNumber').val(result[3])
+                $('#balance').val(result[4])
                 $(button).show()
             }
         });
         request.fail(function() {
-            $('#tariff_form').hide()
+            $('#contract_form').hide()
             $('<p/>', {
                 id: 'errors_p'
             }).appendTo('#user_edit_body');

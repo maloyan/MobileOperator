@@ -29,6 +29,13 @@ public class AdminController {
 	    return "redirect:/admin/users";
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.setAttribute("is_admin", null);
+        return "redirect:/index";
+    }
+
 	@RequestMapping("/users")
 	public String users(HttpServletRequest request, Map<String, Object> model) {
 		List<Integer> errors = new ArrayList<Integer>();

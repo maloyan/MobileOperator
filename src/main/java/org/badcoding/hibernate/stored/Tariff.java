@@ -15,9 +15,6 @@ public class Tariff {
     private Integer callPerDay;
     private Integer sms;
 
-    public void setTariffId(Integer tariffId) {
-        this.tariffId = tariffId;
-    }
 
     @Id
     @Column(name = "Tariff_ID", nullable = false)
@@ -126,4 +123,5 @@ public class Tariff {
 
         return Objects.hash(tariffId, name, intMb, intDay, callDayPerMinute, callNightPerMinute, callPerDay, sms);
     }
+
 }
