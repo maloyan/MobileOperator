@@ -1,7 +1,7 @@
 package org.badcoding.spring.form;
 
 public class UsersForm {
-	private Integer id;
+	private String id;
 	private String first_name;
 	private String last_name;
     private String company;
@@ -10,11 +10,11 @@ public class UsersForm {
     private String personal_or_commercial;
     private String passport;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

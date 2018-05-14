@@ -116,4 +116,25 @@ public class ContractDAOImpl implements ContractDAO {
         return contractList;
     }
 
+    public List<Contract> listContractsByPhone(String phone) {
+        Session session = null;
+        List<Contract> contractList = new ArrayList<Contract>();
+        try {
+            String queryText =
+                    "SELECT f " +
+                            "FROM Contract f " +
+                            "WHERE f.phoneNumber = :phone";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            query.setString("phone", phone);
+            contractList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return contractList;
+    }
 }

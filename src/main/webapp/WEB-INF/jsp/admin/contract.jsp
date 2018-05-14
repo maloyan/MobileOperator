@@ -112,6 +112,9 @@
                                     <p><form:input id="id" path="id" type="text" class="form-control" placeholder="Номер договора" /></p>
                                 </div>
                                 <div class="col-md-4">
+                                    <p><form:input id="customerId" path="customerId" type="text" class="form-control" placeholder="Id пользователя" /></p>
+                                </div>
+                                <div class="col-md-4">
                                     <p><form:input id="phoneNumber" path="phoneNumber" type="text" class="form-control" placeholder="Телефон" /></p>
                                 </div>
                                 <div class="col-md-4" align="right">

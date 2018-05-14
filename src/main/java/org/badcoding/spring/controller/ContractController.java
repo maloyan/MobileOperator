@@ -60,32 +60,21 @@ public class ContractController {
 		try {
 
             Integer id = contractForm.getId();
+            Integer customerId = contractForm.getCustomerId();
 			String phoneNumber = contractForm.getPhoneNumber();
 
-            if (id == null)
-                id = -1;
-            /*
-			if (!id_s.equals("") && (!first_name.equals("") || !last_name.equals("") || !company_s.equals("") || !address.equals("") || !email.equals("") || !personal_or_comm.equals("") || !passport.equals(""))) {
-				errors.add(46);
-				throw new Exception();
-			}
+            if (id == null && customerId == null && phoneNumber.isEmpty()) {
+                result = contractDAO.listContracts();
+            } else if (id != null) {
+                Contract t = contractDAO.getContractById(id);
+                if (t != null)
+                    result.add(t);
+            } else if (customerId != null) {
+                result = contractDAO.listContractsOfCustomer(customerDAO.getCustomerById(customerId));
+            } else if (!phoneNumber.isEmpty()) {
+                result = contractDAO.listContractsByPhone(phoneNumber);
+            }
 
-
-			if (flight_s == "")
-				flight_s = "-1";
-			if (company_s == "")
-				company_s = "-1";
-			if (paid_s == "")
-				paid_s = "-1";
-			*/
-
-            if (id != -1) {
-				Contract t = contractDAO.getContractById(id);
-				if (t != null)
-					result.add(t);
-			} else {
-				result = contractDAO.listContracts();
-			}
 			if (result.size() == 0) {
 				errors.add(48);
 				model.put("info", errors);

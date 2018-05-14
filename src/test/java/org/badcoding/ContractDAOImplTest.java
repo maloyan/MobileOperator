@@ -69,4 +69,10 @@ public class ContractDAOImplTest {
         List<Contract> contractList = Factory.GetInstance().getContractDAO().listContractsOfCustomer(customer);
         assertEquals(contractList.size(), 1);
     }
+    @Test
+    public void listContractsByPhone() {
+        Customer customer = Factory.GetInstance().getCustomerDAO().getCustomerById(1);
+        List<Contract> contractList = Factory.GetInstance().getContractDAO().listContractsByPhone("88005553535");
+        assertEquals(contractList.size(), 1);
+    }
 }

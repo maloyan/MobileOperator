@@ -58,9 +58,12 @@ public class AdminController {
 			return "redirect:/index";
 		}
 		try {
-			Integer id_s = usersForm.getId();
+			String id = usersForm.getId();
 			String first_name = usersForm.getFirst_name();
 			String last_name = usersForm.getLast_name();
+            Integer id_s;
+            if (id.isEmpty()) id_s = null;
+            else id_s = Integer.parseInt(id);
 
 			if (id_s == null && first_name.isEmpty() && last_name.isEmpty()) {
 			    result = customerDAO.listCustomers();
@@ -98,7 +101,7 @@ public class AdminController {
 				throw new Exception();
 			}
 
-            Integer id_s = usersForm.getId();
+            Integer id_s = Integer.parseInt(usersForm.getId());
             String first_name = usersForm.getFirst_name();
             String last_name = usersForm.getLast_name();
             String company_s = usersForm.getCompany();
@@ -223,7 +226,7 @@ public class AdminController {
                 throw new Exception();
             }
 
-            Integer id_s = usersForm.getId();
+            Integer id_s = Integer.parseInt(usersForm.getId());
             String first_name = usersForm.getFirst_name();
             String last_name = usersForm.getLast_name();
             String company_s = usersForm.getCompany();

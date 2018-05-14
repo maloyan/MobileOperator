@@ -17,4 +17,6 @@ public interface ContractDAO {
     List<Contract> listContractsOfCustomer(Customer customer);
 
     List<Contract> listContracts();
+
+    List<Contract> listContractsByPhone(String phone);
 }
