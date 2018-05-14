@@ -91,5 +91,31 @@ public class CustomerDAOImpl implements CustomerDAO {
         }
         return customersList;
     }
-
+    public List<Customer> listCustomersByName(String first_name, String last_name) {
+        Session session = null;
+        List<Customer> customersList = new ArrayList<Customer>();
+        try {
+            String queryText =
+                    "SELECT c " +
+                            "FROM Customer c ";
+            if (first_name != null)
+                queryText += "WHERE c.firstName = :first_name";
+            if (last_name != null)
+                queryText += " AND c.lastName = :last_name";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            if (first_name != null)
+                query.setString("first_name", first_name);
+            if (last_name != null)
+                query.setString("last_name", last_name);
+            customersList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return customersList;
+    }
 }

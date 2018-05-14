@@ -61,36 +61,20 @@ public class AdminController {
 			Integer id_s = usersForm.getId();
 			String first_name = usersForm.getFirst_name();
 			String last_name = usersForm.getLast_name();
-			String company_s = usersForm.getCompany();
-			String address = usersForm.getAddress();
-			String email = usersForm.getEmail();
-			String personal_or_comm = usersForm.getPersonal_or_commercial();
-			String passport = usersForm.getPassport();
 
-            if (id_s == null)
-                id_s = -1;
-            /*
-			if (!id_s.equals("") && (!first_name.equals("") || !last_name.equals("") || !company_s.equals("") || !address.equals("") || !email.equals("") || !personal_or_comm.equals("") || !passport.equals(""))) {
-				errors.add(46);
-				throw new Exception();
-			}
+			if (id_s == null && first_name.isEmpty() && last_name.isEmpty()) {
+			    result = customerDAO.listCustomers();
+            } else if (id_s != null) {
+                Customer t = customerDAO.getCustomerById(id_s);
+                if (t != null)
+                    result.add(t);
+            } else if ((first_name.isEmpty() && !last_name.isEmpty()) || (!first_name.isEmpty() && last_name.isEmpty())) {
+                errors.add(46);
+                throw new Exception();
+            } else if (!first_name.isEmpty() && !last_name.isEmpty()) {
+                result = customerDAO.listCustomersByName(first_name, last_name);
+            }
 
-
-			if (flight_s == "")
-				flight_s = "-1";
-			if (company_s == "")
-				company_s = "-1";
-			if (paid_s == "")
-				paid_s = "-1";
-            */
-
-			if (id_s != -1) {
-				Customer t = customerDAO.getCustomerById(id_s);
-				if (t != null)
-					result.add(t);
-			} else {
-				result = customerDAO.listCustomers();
-			}
 			if (result.size() == 0) {
 				errors.add(48);
 				model.put("info", errors);
@@ -123,21 +107,33 @@ public class AdminController {
             String personal_or_comm = usersForm.getPersonal_or_commercial();
             String passport = usersForm.getPassport();
 
-            /*
+            if (customerDAO.getCustomerById(id_s) != null) {
+                errors.add(10);
+                throw new Exception();
+            }
+
 			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-            if (!email_regex.matcher(email).matches())
+            if (!email_regex.matcher(email).matches()) {
                 errors.add(24);
-
-			if (password.length() < 8)
-				errors.add(21);
-			if (name.length() < 4)
-				errors.add(22);
-			if (last_name.length() < 4)
-				errors.add(23);
-
-			if (users.getByEmail(email).size() != 0)
-				errors.add(25);
-            */
+                throw new Exception();
+            }
+            if (first_name.length() < 2) {
+                errors.add(22);
+                throw new Exception();
+            }
+            if (last_name.length() < 2) {
+                errors.add(23);
+                throw new Exception();
+            }
+            if (!(personal_or_comm.equals("физическое") || personal_or_comm.equals("юридическое"))) {
+                errors.add(11);
+                throw new Exception();
+            }
+            Pattern passport_regex = Pattern.compile("[0-9]+");
+            if (!passport_regex.matcher(passport).matches()) {
+                errors.add(12);
+                throw new Exception();
+            }
             Customer customer = new Customer();
             customer.setCustomerId(id_s);
             customer.setFirstName(first_name);

@@ -52,37 +52,17 @@ public class TariffController {
 		try {
 			Integer id = tariffForm.getId();
 			String name = tariffForm.getName();
-			Integer intMb = tariffForm.getIntMb();
-			Integer intDay = tariffForm.getIntDay();
-			Integer callDayPerMinute = tariffForm.getCallDayPerMinute();
-			Integer callNightPerMinute = tariffForm.getCallNightPerMinute();
-			Integer callPerDay = tariffForm.getCallPerDay();
-			Integer sms = tariffForm.getSms();
 
-            if (id == null)
-                id = -1;
-            /*
-			if (!id_s.equals("") && (!first_name.equals("") || !last_name.equals("") || !company_s.equals("") || !address.equals("") || !email.equals("") || !personal_or_comm.equals("") || !passport.equals(""))) {
-				errors.add(46);
-				throw new Exception();
-			}
+            if (id == null && name.isEmpty()) {
+                result = tariffDAO.listTariffs();
+            } else if (id != null) {
+                Tariff t = tariffDAO.getTariffById(id);
+                if (t != null)
+                    result.add(t);
+            } else {
+                result = tariffDAO.listTariffsByName(name);
+            }
 
-
-			if (flight_s == "")
-				flight_s = "-1";
-			if (company_s == "")
-				company_s = "-1";
-			if (paid_s == "")
-				paid_s = "-1";
-			*/
-
-            if (id != -1) {
-				Tariff t = tariffDAO.getTariffById(id);
-				if (t != null)
-					result.add(t);
-			} else {
-				result = tariffDAO.listTariffs();
-			}
 			if (result.size() == 0) {
 				errors.add(48);
 				model.put("info", errors);
@@ -115,21 +95,12 @@ public class TariffController {
             Integer callPerDay = tariffForm.getCallPerDay();
             Integer sms = tariffForm.getSms();
 
-/*
-			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-            if (!email_regex.matcher(email).matches())
-                errors.add(24);
+            if (id == null || name.isEmpty() || intMb == null || intDay == null || callDayPerMinute == null || callNightPerMinute == null
+                    || callPerDay == null || sms == null) {
+                errors.add(13);
+                throw new Exception();
+            }
 
-			if (password.length() < 8)
-				errors.add(21);
-			if (name.length() < 4)
-				errors.add(22);
-			if (last_name.length() < 4)
-				errors.add(23);
-
-			if (users.getByEmail(email).size() != 0)
-				errors.add(25);
-*/
             Tariff tariff = new Tariff();
             tariff.setTariffId(id);
             tariff.setName(name);

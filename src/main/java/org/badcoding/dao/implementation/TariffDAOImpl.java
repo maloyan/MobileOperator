@@ -91,4 +91,24 @@ public class TariffDAOImpl implements TariffDAO {
         return tariffsList;
     }
 
+    public List<Tariff> listTariffsByName(String name) {
+        Session session = null;
+        List<Tariff> tariffsList = new ArrayList<Tariff>();
+        try {
+            String queryText =
+                    "SELECT f FROM Tariff f WHERE f.name = :name";
+            session = Database.getFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery(queryText);
+            query.setString("name", name);
+            tariffsList = query.list();
+            session.getTransaction().commit();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return tariffsList;
+    }
+
 }

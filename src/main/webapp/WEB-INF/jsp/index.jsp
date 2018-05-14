@@ -27,23 +27,16 @@
 </head>
 
 <body>
-<%@include file="include/navbar.jsp" %>
-<c:if test="${!empty errors}">
-    <p>
-    <div class="col-xs-10 col-xs-offset-1">
-        <c:forEach items="${errors}" var="error">
-            <div class="alert alert-danger fade in">
-                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">
-                    ×
-                </button>
-                <strong><spring:message code="error.00" /></strong>
-                <spring:message code="error.${error}" />
-            </div>
-        </c:forEach>
-    </div>
-    </p>
-</c:if>
 
+<div class="jumbotron">
+    <div class="container">
+    <h1>Позвони мне</h1>
+    <p>На шаг позади</p>
+    <p>
+        <a class="btn btn-primary btn-lg"  href="<c:url value="/login" />"> Войти </a>
+    </p>
+    </div>
+</div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

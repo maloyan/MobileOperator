@@ -33,6 +33,10 @@ public class CustomerDAOImplTest {
         assertEquals(customer.getCustomerId(), 4);
     }
 
-
+    @Test
+    public void testListCustomersByName() {
+        List<Customer> customerList = Factory.GetInstance().getCustomerDAO().listCustomersByName("James", "Carter");
+        assertEquals(customerList.size(), 1);
+    }
 
 }

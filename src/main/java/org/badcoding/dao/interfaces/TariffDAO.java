@@ -14,4 +14,6 @@ public interface TariffDAO {
     Tariff getTariffById(int id);
 
     List<Tariff> listTariffs();
+
+    List<Tariff> listTariffsByName(String name);
 }

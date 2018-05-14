@@ -129,25 +129,6 @@
                                 <div class="col-md-4">
                                     <p><form:input id="last_name" path="last_name" type="text" class="form-control" placeholder="${ msg3 }" /></p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="company" path="company" type="text" class="form-control" placeholder="${ msg4 }" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="email" path="email" type="text" class="form-control" placeholder="${ msg5 }" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="address" path="address" type="text" class="form-control" placeholder="${ msg6 }" /></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="personal_or_commercial" path="personal_or_commercial" type="text" class="form-control" placeholder="${ msg7 }" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="passport" path="passport" type="text" class="form-control" placeholder="${ msg8 }" /></p>
-                                </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
                                 </div>

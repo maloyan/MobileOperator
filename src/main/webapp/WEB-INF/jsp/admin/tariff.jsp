@@ -118,28 +118,6 @@
                                 <div class="col-md-4">
                                     <p><form:input id="name" path="name" type="text" class="form-control" placeholder="Название" /></p>
                                 </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="intMb" path="intMb" type="text" class="form-control" placeholder="Интернет руб/Мб" /></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="intDay" path="intDay" type="text" class="form-control" placeholder="Интернет безлимит руб/день" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="callDayPerMinute" path="callDayPerMinute" type="text" class="form-control" placeholder="Звонок днем руб/мин" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="callNightPerMinute" path="callNightPerMinute" type="text" class="form-control" placeholder="Звонок ночью руб/мин" /></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><form:input id="callPerDay" path="callPerDay" type="text" class="form-control" placeholder="Звонок руб/день" /></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><form:input id="sms" path="sms" type="text" class="form-control" placeholder="Сообщение руб/смс" /></p>
-                                </div>
                                 <div class="col-md-4" align="right">
                                     <p><button class="btn btn-primary" type="submit"><spring:message code="label.admin.06" /></button></p>
                                 </div>

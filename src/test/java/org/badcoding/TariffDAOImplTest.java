@@ -38,4 +38,10 @@ public class TariffDAOImplTest {
         Factory.GetInstance().getTariffDAO().addTariff(tariff);
         Factory.GetInstance().getTariffDAO().removeTariff(tariff);
     }
+
+    @Test
+    public void testListTariffsByName() {
+        List<Tariff> tariffList = Factory.GetInstance().getTariffDAO().listTariffsByName("Base");
+        assertEquals(tariffList.size(), 1);
+    }
 }

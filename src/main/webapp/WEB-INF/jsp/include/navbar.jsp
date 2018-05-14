@@ -28,7 +28,8 @@
 			</div>
 		</div>
 	</div>
-	
+
+
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content" align="center">
@@ -43,7 +44,6 @@
 			<p>
 				<div class="btn-group">
 				  <a href="<c:url value="/set_locale?locale=ru" />" type="button" class="btn btn-default">RU</a>
-				  <a href="<c:url value="/set_locale?locale=en" />" type="button" class="btn btn-default">EN</a>
 				</div>
 			</p>
 	    </div>
