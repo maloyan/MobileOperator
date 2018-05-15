@@ -1,5 +1,5 @@
-INSERT INTO Tariff VALUES (1, 'Base', 5, NULL, 3, 2, NULL, 1);
-INSERT INTO Tariff VALUES (2, 'Unlim', NULL, 15, NULL, NULL, 10, 1);
+INSERT INTO Tariff VALUES (1, 'Base', 5, 1, 3, 2,1, 1);
+INSERT INTO Tariff VALUES (2, 'Unlim', 1, 15, 1, 1, 10, 1);
 
 INSERT INTO Customer VALUES (1, 'James' , 'Carter',     NULL, 'JC@mail.com'    , '110 W. Liberty St.', 'personal'  , '6085551001');
 INSERT INTO Customer VALUES (2, 'Helen' , 'Leary' ,     NULL, 'HL@mail.com'    , '638 Cardinal Ave.' , 'personal'  , '6085551002');

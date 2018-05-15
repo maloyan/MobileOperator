@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/admin")
@@ -50,8 +51,19 @@ public class TariffController {
 			return "redirect:/index";
 		}
 		try {
-			Integer id = tariffForm.getId();
+			String id_s = tariffForm.getId();
 			String name = tariffForm.getName();
+            Integer id;
+			if (!id_s.isEmpty()) {
+                Pattern id_regex = Pattern.compile("[0-9]+");
+                if (!id_regex.matcher(id_s).matches()) {
+                    errors.add(15);
+                    throw new Exception();
+                }
+                id = Integer.parseInt(id_s);
+            } else {
+			    id = null;
+            }
 
             if (id == null && name.isEmpty()) {
                 result = tariffDAO.listTariffs();
@@ -86,7 +98,7 @@ public class TariffController {
 				throw new Exception();
 			}
 
-            Integer id = tariffForm.getId();
+            Integer id = Integer.parseInt(tariffForm.getId());
             String name = tariffForm.getName();
             Integer intMb = tariffForm.getIntMb();
             Integer intDay = tariffForm.getIntDay();
@@ -189,7 +201,7 @@ public class TariffController {
                 throw new Exception();
             }
 
-            Integer id = tariffForm.getId();
+            Integer id = Integer.parseInt(tariffForm.getId());
             String name = tariffForm.getName();
             Integer intMb = tariffForm.getIntMb();
             Integer intDay = tariffForm.getIntDay();
@@ -198,22 +210,6 @@ public class TariffController {
             Integer callPerDay = tariffForm.getCallPerDay();
             Integer sms = tariffForm.getSms();
 
-            /*
-			Pattern email_regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-            if (!email_regex.matcher(email).matches())
-                errors.add(24);
-
-			if (password.length() < 8)
-				errors.add(21);
-			if (name.length() < 4)
-				errors.add(22);
-			if (last_name.length() < 4)
-				errors.add(23);
-
-			if (users.getByEmail(email).size() != 0)
-				errors.add(25);
-
-            */
             Tariff tariff = new Tariff();
 
             tariff.setTariffId(id);

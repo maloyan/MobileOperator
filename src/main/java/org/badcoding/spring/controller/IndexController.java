@@ -57,9 +57,15 @@ public class IndexController {
     public String process_login(HttpServletRequest request, @ModelAttribute("loginForm") LoginForm loginForm, Map<String, Object> model, BindingResult result) {
         List<Integer> errors = new ArrayList<Integer>();
         try {
-            Integer id = loginForm.getId();
+            String id_s = loginForm.getId();
             String password = loginForm.getPassword();
+            Pattern id_regex = Pattern.compile("[0-9]+");
+            if (id_s.isEmpty() || password.isEmpty() || !id_regex.matcher(id_s).matches()) {
+                errors.add(16);
+                throw new Exception();
+            }
 
+            Integer id = Integer.parseInt(id_s);
             if (id.equals(admin)) {
                 if (!password.equals(admin_password)) {
                     errors.add(32);
